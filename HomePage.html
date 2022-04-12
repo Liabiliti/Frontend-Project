@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="stylesheet.css" rel="stylesheet">
+        <meta content="width=device-width" name="viewport">
+        <meta charset="utf-8">
+        <title>My Website</title>
+    </head>
+    <header>
+    <div class="container1">
+        <ul  id="nav">
+            <li><a href ="#home" id="main">Padstow Childcare Centre</a></li>
+            <li href ="#home"><a href ="#home"></a></li>
+            <li></li>
+            <li><a href ="#aboutus">About us</a></li>
+            <li><a href ="#ourservices">Our services</a></li>
+            <li><a href ="#applications">Applications</a></li>
+            <li><a href ="#login">Log in</a></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+        <!--<div class="navigation-bar">
+            <ul>
+                <li><a href ="#home" id="main">Padstow Childcare Centre</a></li>
+                <li href ="#home"><a href ="#home"></a></li>
+                <li></li>
+                <li><a href ="#aboutus">About us</a></li>
+                <li><a href ="#ourservices">Our services</a></li>
+                <li><a href ="#applications">Applications</a></li>
+                <li><a href ="#login">Log in</a></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>-->
+    </header>
+    <body>
+            <div class="slider">
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+
+                    <div class="slide first">
+                        <img src="img1.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="img2.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="img3.jpg" alt="">
+                    </div>
+                    <div class="slide">
+                        <img src="img4.jpg" alt="">
+                    </div>
+                
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+                </div>
+
+                    <div class="navigation-manual">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+                    </div>
+            </div>
+            <script type="text/javascript">
+                var counter = 1;
+                setInterval(function(){
+                    document.getElementById('radio' + counter).checked = true;
+                    counter++;
+                    if(counter > 4){
+                        counter = 1;
+                    }
+                }, 5000);
+            </script>
+        <div class="container" id="aboutus">
+            <h2>Hello</h2>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="width=device-width" name="viewport">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color:
+                /* #fef7e0*/
+                white;
+            height: 500vh;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+        iframe{
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width:100%;
+            height: 100%;
+        }
+
+        .container-1 {
+            width: 100vw;
+            height: 50vh;
+            left: 0;
+            top: 0;
+            right: 20vw;
+            position: absolute;
+            margin: 0;
+            padding: 0;   
+            z-index: 1;
+        }
+
+        svg { 
+            width: 100vw;
+            position:absolute;
+            top: 50%;
+            left: 0;
+            height: 50vh;
+            overflow: hidden;
+          }
+          svg text {
+            font-family: Biko, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 2.5vw;
+          }
+          svg rect {
+              left: 50vw;
+              width: 100vw;
+              height: 50vh;
+              fill: white;
+          }
+          svg > rect {
+              -webkit-mask: url(#mask);
+              mask: url(#mask);
+          }
+
+        .container {
+            position: relative;
+            z-index: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: whitesmoke;
+            top: 0%;
+            left: 0%;
+            overflow: hidden;
+        }
+
+        .container1 {
+            position: relative;
+            z-index: -2;
+            /*width: 90vw;
+            height: 87.5vh;*/
+            width: 100vw;
+            height: 101vh;
+            background-color: #fddde6;
+            /*top: 2.5%;
+            left: 5%;*/
+            overflow: hidden;
+        }
+        .container5 {
+            position: relative;
+            z-index: -2;
+            /*width: 90vw;
+            height: 87.5vh;*/
+            width: 100vw;
+            height: 101vh;
+            background-color: whitesmoke;
+            /*top: 2.5%;
+            left: 5%;*/
+            overflow: hidden;
+        }
+        .container4 {
+            position: absolute;
+            z-index: -2;
+            width: 80vw;
+            height: 75vh;
+            background-color: white;
+            top: 15%;
+            left: 10%;
+            overflow: hidden;
+            float: left;
+        }
+        .container2 {
+            position: absolute;
+            z-index: -2;
+            width: 41.5vw;
+            height: 70vh;
+            background-color: #fddde6;
+            top: 17.5%;
+            left: 11.25%;
+            overflow: hidden;
+            float: left;
+        }
+        .container2 h2{
+            font-family: Biko, sans-serif;
+            font-size: 3em;
+        }
+        .container3 {
+            position: absolute;
+            z-index: -2;
+            width: 35vw;
+            height: 70vh;
+            background-color: white;
+            top: 17.5%;
+            left: 53.75%;
+            overflow: hidden;
+            float: left;
+        }
+
+        .navbar {
+            background-color:
+                /*rgba(237, 230, 211, 0.5)*/
+                rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-bottom: 0.1em solid rgb(204, 199, 186);
+            font-family: Biko, sans-serif;;
+            z-index: -1;
+        }
+
+        .navbar ul {
+            width: 100vw;
+            height: 7vh;
+        }
+
+        .navbar li {
+            padding-top: 1vh;
+            display: inline;
+            height: 100%;
+            width: 10%;
+            float: left;
+            text-align: center;
+            font-size: 1.5vw;
+        }
+        #nav li:hover{
+            background-color: black;
+        }
+
+        #logo {
+            width: 20%;
+            color: black;
+            font-weight: bold;
+        }
+
+        @media(max-width: 950px) {
+            .navbar li {
+                font-size: 0;
+                width: 0%;
+            }
+
+            #logo {
+                padding-top: 1.5vh;
+                width: 100%;
+                font-size: 4vw;
+                color: rgb(54, 69, 79);
+            }
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: rgb(54, 69, 79);
+        }
+
+        .slides {
+            width: 500%;
+            height: 500px;
+            display: flex;
+        }
+
+        .slides input {
+            display: none;
+
+        }
+
+        .slide {
+            width: 20%;
+            transition: 2s;
+        }
+
+        .slide img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .navigation-manual {
+            position: absolute;
+            width: 100vw;
+            margin-top: 20em;
+            display: flex;
+            justify-content: center;
+            /*border: red solid 5px;*/
+        }
+
+        .manual-btn {
+            border: 0.125em solid white;
+            padding: 0.3125em;
+            border-radius: 0.625em;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .manual-btn:hover {
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .manual-btn:not(:last-child) {
+            margin-right: 20px
+        }
+
+
+        #radio1:checked~.first {
+            margin-left: 0;
+        }
+
+        #radio2:checked~.first {
+            margin-left: -20%;
+        }
+
+        #radio3:checked~.first {
+            margin-left: -40%;
+        }
+
+        #radio4:checked~.first {
+            margin-left: -60%;
+        }
+
+        .navigation-auto {
+            position: absolute;
+            display: flex;
+            width: 100vw;
+            justify-content: center;
+            margin-top: 51.2em;
+            /*border: red solid 5px;*/
+        }
+
+        .navigation-auto div {
+            border: 2px solid white;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s;
+        }
+
+        .navigation-auto div:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        #radio1:checked~.navigation-auto .auto-btn1 {
+            background-color: white;
+
+        }
+
+        #radio2:checked~.navigation-auto .auto-btn2 {
+            background-color: white;
+
+        }
+
+        #radio3:checked~.navigation-auto .auto-btn3 {
+            background-color: white;
+
+        }
+
+        #radio4:checked~.navigation-auto .auto-btn4 {
+            background-color: white;
+
+        }
+    </style>
+</head>
+<header>
+    <div class="container-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 80" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <mask id="mask" x="0" y="0" width="100%" height="100%">
+                    <rect x="0" y="0" width="100%" height="100%" />
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">PADSTOW</text> 
+                    
+                </mask>
+            </defs>
+            <rect x="0" y="0" width="100%" height="100%" />
+        </svg>
+    </div>
+    <div class="navbar">
+        <ul id="nav">
+            <li></li>
+            <li id="logo">Padstow Childcare Centre</li>
+            <li></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutus">About us</a></li>
+            <li><a href="#ourservices">Our services</a></li>
+            <li><a href="#applications">Applications</a></li>
+            <li><a href="#login">Login</a></li>
+
+        </ul>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <div class="slides" id="#home">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+
+            <div class="slide first">
+                <img src="img1.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="img2.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="img3.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="img4.jpg" alt="">
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+        </div>
+
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var counter = 1;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+        }, 5000);
+    </script>
+    <div class="container1">
+        
+        <div class="container2">
+            <h2>About us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+        </div>
+        <div class="container3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26475.515623659066!2d151.0089440967273!3d-33.955542660453126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bee801d1136d%3A0xcbe1f1f74659f100!2sPadstow%20Play%20%26%20Learn!5e0!3m2!1sen!2sau!4v1648680088564!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           
+        </div>
+    </div>
+    <div class="container5">
+        <div class="container2">
+            <h2>Our services</h2>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="container2">
+            
+        </div>
+    </div>
+
+</body>
+
+</html>

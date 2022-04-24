@@ -26,7 +26,6 @@
             width:100%;
             height: 100%;
         }
-
         .container-1 {
             width: 100vw;
             height: 50vh;
@@ -35,11 +34,11 @@
             right: 20vw;
             position: absolute;
             margin: 0;
-            padding: 0;   
+            padding: 0;
             z-index: 1;
         }
 
-        svg { 
+        svg {
             width: 100vw;
             position:absolute;
             top: 50%;
@@ -82,61 +81,137 @@
             height: 87.5vh;*/
             width: 100vw;
             height: 101vh;
-            background-color: #fddde6;
+            background-color: #white;
             /*top: 2.5%;
             left: 5%;*/
             overflow: hidden;
         }
-        .container5 {
-            position: relative;
-            z-index: -2;
-            /*width: 90vw;
-            height: 87.5vh;*/
-            width: 100vw;
-            height: 101vh;
-            background-color: whitesmoke;
-            /*top: 2.5%;
-            left: 5%;*/
-            overflow: hidden;
+        .container-shade-grey{
+          top: 0;
+          left: 0;
+          background-color: lightgrey;
+          height: 30vh;
+          width: 100vw;
         }
-        .container4 {
+        .container-shade-blue{
+          top: 0;
+          left: 0;
+          background-color: lightblue;
+          height: 100vh;
+          width: 100vw;
+        }
+        .sub-container1 {
+          position:absolute;
+          z-index: 0;
+          width: 83vw;
+          height: 95vh;
+          top: 0%;
+          left: 8.5%;
+          background-color: white;
+          overflow: hidden;
+          /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        }
+        .sub-container1-ourservices {
+          position:absolute;
+          z-index: 0;
+          width: 83vw;
+          height: 80vh;
+          top: 10%;
+          left: 10%;
+          background-color: white;
+          overflow: hidden;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .sub-container2 {
             position: absolute;
             z-index: -2;
-            width: 80vw;
-            height: 75vh;
+            width: 77.5vw;
+            height: 52.5vh;
+            background-color: #whitesmoke;
+            top: 2%;
+            left: 3%;
+            overflow: hidden;
+            float: left;
+            padding-bottom: 2%;
+            border: 2px lightgrey solid;
+        }
+        .sub-container2-ourservices {
+            position: absolute;
+            z-index: -2;
+            width: 50vw;
+            height: 73.5vh;
             background-color: white;
-            top: 15%;
-            left: 10%;
+            top: 3vh;
+            left: 2.5vw;
             overflow: hidden;
-            float: left;
+            border: 2px lightgrey solid;
         }
-        .container2 {
-            position: absolute;
-            z-index: -2;
-            width: 41.5vw;
-            height: 70vh;
-            background-color: #fddde6;
-            top: 17.5%;
-            left: 11.25%;
-            overflow: hidden;
-            float: left;
-        }
-        .container2 h2{
-            font-family: Biko, sans-serif;
-            font-size: 3em;
-        }
-        .container3 {
-            position: absolute;
-            z-index: -2;
-            width: 35vw;
-            height: 70vh;
-            background-color: white;
-            top: 17.5%;
-            left: 53.75%;
-            overflow: hidden;
-            float: left;
+        @property --num {
+          syntax: '<integer>';
+          inherits: false;
+          initial-value: 0;
         }
 
+        .small-container::before {
+          counter-increment: my-counter var(--num);
+          content: counter(my-counter) "+";
+          animation: count 10s ease-in-out forwards;
+        }
+        @keyframes count {
+          to { --num: 100; }
+        }
+        .small-container{
+          position: relative;
+          z-index: 2;
+          width: 25vw;
+          height: 15.75vh;
+          background-color: white;
+          top: 1vh;
+          left: 55vw;
+          overflow: hidden;
+          z-index: 4;
+          margin-top: 2vh;
+          border: 2px lightgrey solid;
+          font-family: Biko, sans-serif;
+          font-size: 2.6em;
+          text-align: center;
+          padding-top: 7vh;
+        }
+        .small-container p{
+          font-size: 2em;
+        }
+         .container1 h2{
+            font-family: Biko, sans-serif;
+            font-size: 2.8em;
+            text-align: center;
+            padding-top: 10vh;
+            padding-bottom: 5vh;
+        }
+        .container1 p{
+          font-family: Biko, sans-serif;
+          line-height:3.5vh;
+          letter-spacing: 0.1em;
+          font-size: 1.5vw;
+          z-index: 1;
+          padding: 0 2vw 2vh 2vw;
+          top: 0vh;
+        }
+        .small-container p{
+          font-size: 2vw;
+        }
+
+        .sub-container3 {
+            position: relative;
+            z-index: -2;
+            width: 77.5vw;
+            height: 35vh;
+            background-color: white;
+            top: 52vh;
+            left: 2.6vw;
+            overflow: hidden;
+            z-index: 3;
+            margin-top: 9vh;
+        }
         .navbar {
             background-color:
                 /*rgba(237, 230, 211, 0.5)*/
@@ -291,42 +366,116 @@
 
         #radio3:checked~.navigation-auto .auto-btn3 {
             background-color: white;
-
         }
 
         #radio4:checked~.navigation-auto .auto-btn4 {
             background-color: white;
+       }
+        #menu__toggle {
+            opacity: 0;
+            }
+        #menu__toggle:checked + .menu__btn > span {
+            transform: rotate(45deg);
+            }
+        #menu__toggle:checked + .menu__btn > span::before {
+            top: 0;
+            transform: rotate(0deg);
+            }
+        #menu__toggle:checked + .menu__btn > span::after {
+            top: 0;
+            transform: rotate(90deg);
+            }
+        #menu__toggle:checked ~ .menu__box {
+            left: 0 !important;
+            }
+        .menu__btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            z-index: 3;
+            margin: 0;
+            }
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #616161;
+            transition-duration: .25s;
+            }
+      .menu__btn > span::before {
+            content: '';
+            top: -8px;
+            }
+      .menu__btn > span::after {
+            content: '';
+            top: 8px;
+            }
+      .menu__box {
+            display: block;
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: -100%;
+            width: 300px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-color: #ECEFF1;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+            transition-duration: .25s;
+            }
+      .menu__item {
+            display: block;
+            padding: 12px 24px;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition-duration: .25s;
+            }
+      .menu__item:hover {
+            background-color: #CFD8DC;
+            }
 
-        }
+
     </style>
 </head>
 <header>
+  <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="#">Home</a></li>
+          <li><a class="menu__item" href="#">About us</a></li>
+          <li><a class="menu__item" href="#">Our services</a></li>
+          <li><a class="menu__item" href="#">Contact us</a></li>
+          <li><a class="menu__item" href="#">Login</a></li>
+        </ul>
+  </div>
+</header>
     <div class="container-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 80" preserveAspectRatio="xMidYMid slice">
             <defs>
                 <mask id="mask" x="0" y="0" width="100%" height="100%">
                     <rect x="0" y="0" width="100%" height="100%" />
-                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">PADSTOW</text> 
-                    
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">PADSTOW</text>
+
                 </mask>
             </defs>
             <rect x="0" y="0" width="100%" height="100%" />
         </svg>
     </div>
-    <div class="navbar">
-        <ul id="nav">
-            <li></li>
-            <li id="logo">Padstow Childcare Centre</li>
-            <li></li>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#aboutus">About us</a></li>
-            <li><a href="#ourservices">Our services</a></li>
-            <li><a href="#applications">Applications</a></li>
-            <li><a href="#login">Login</a></li>
 
-        </ul>
-    </div>
-</header>
 
 <body>
     <div class="container">
@@ -375,25 +524,30 @@
         }, 5000);
     </script>
     <div class="container1">
-        
-        <div class="container2">
-            <h2>About us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+      <div class="container-shade-grey">
+        <div class="sub-container1">
+          <div class="sub-container2">
+              <h2>about us</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+          </div>
+          <div class="sub-container3">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26475.515623659066!2d151.0089440967273!3d-33.955542660453126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bee801d1136d%3A0xcbe1f1f74659f100!2sPadstow%20Play%20%26%20Learn!5e0!3m2!1sen!2sau!4v1648680088564!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
-        <div class="container3">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26475.515623659066!2d151.0089440967273!3d-33.955542660453126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bee801d1136d%3A0xcbe1f1f74659f100!2sPadstow%20Play%20%26%20Learn!5e0!3m2!1sen!2sau!4v1648680088564!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-           
-        </div>
-    </div>
-    <div class="container5">
-        <div class="container2">
-            <h2>Our services</h2>
-        </div>
+      </div>
     </div>
     <div class="container1">
-        <div class="container2">
-            
+      <div class="container-shade-blue">
+        <div class="sub-container1-ourservices">
+          <div class="sub-container2-ourservices">
+            <h2>our services</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+          </div>
+          <div class="small-container"><p>Classes</p></div>
+          <div class="small-container"><p>Graduated kids</p></div>
+          <div class="small-container"><p>Happy customers</p></div>
         </div>
+      </div>
     </div>
 
 </body>

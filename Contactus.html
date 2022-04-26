@@ -3,6 +3,7 @@
 <head>
       <title></title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <style type="text/css">
         body {
           margin: 0;
@@ -25,10 +26,11 @@
           align-items: center;
           justify-content: center;
           scroll-snap-align: start;
+          position: relative;
         }
 
         .one{
-          background-color: black;
+          background-color: white;
         }
         h1 {
           font-size: 8vw;
@@ -45,6 +47,9 @@
         }
         .two {
           background-color: white;
+          height: 100vh;
+          flex-direction: column;
+          flex:1;
         }
         .three {
           background-color: black;
@@ -283,6 +288,148 @@
               background: #4889da;
               color: #f5f5f5;
             }
+
+            a {
+              text-decoration: none;
+            }
+            .social2 a{
+              padding: 20px;
+              color: #7b7c7c;
+              font-size: 1.1rem;
+            }
+             #contact{
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform:translate(-50%,-50%);
+              display: flex;
+              align-items:center;
+            }
+            .social2 {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              background-color: #FFFFFF;
+              box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+            }
+            .social2 a:hover{
+              color: #000000;
+              transition: all ease 0.3s;
+            }
+            .contact-box{
+            	background-color:#434445;
+            	display: flex;
+            	flex-direction: column;
+            	justify-content: center;
+            	align-items: center;
+            	padding: 30px 30px;
+            	box-shadow: 2px 0px 30px rgba(0,0,0,0.1);
+              width: 250px;
+              border-radius: 5px;
+            }
+            .c-heading h1 {
+              text-align: center;
+              color: #e7eef3;
+              font-size: 2.5rem;
+              font-weight: lighter;
+              margin: 0px;
+              padding: 0px;
+            }
+            .c-heading p{
+              font-family: Biko, sans-serif;
+              color: #cecece;
+              font-size: 0.8rem;
+              font-weight: lighter;
+              margin: 0px;
+              padding: 0px;
+              text-align: center;
+            }
+            .c-inputs{
+              margin: 15px 0px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+            .c-inputs input{
+          	width:250px;
+          	height: 45px;
+          	background-color: transparent;
+          	border: none;
+          	border-bottom: 1px solid rgba(251,251,251,0.1);
+          	outline: none;
+          	margin: 10px 0px;
+          	padding: 10px;
+          	box-sizing: border-box;
+          	color: #f4f4f4;
+          	display: flex;
+          }
+            .c-inputs textarea{
+              width: 250px !important;
+              height: 200px !important;
+              outline: none;
+              background-color: rgba(0,0,0,0.1);
+              border: 1px solid rgba(82,82,82,1);
+              color: #f4f4f4;
+              padding: 10px;
+              font-size: 1.2rem;
+              box-sizing: border-box;
+            }
+            .c-inputs button{
+              width: 200px;
+              height: 40px;
+              background-color: #FFFFFF;
+              border: none;
+              outline: none;
+              margin-top: 20px;
+              border-radius: 10px;
+              box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+              letter-spacing: 1px;
+            }
+            .c-inputs input:focus{
+              border-bottom: 1px solid rgba(252,252,252,1.00);
+              transition: all ease 0.5s;
+            }
+            .c-inputs textarea:focus{
+              border: none;
+              border-bottom: 1px solid rgba(255,255,255,1.00);
+              transition: all ease 0.5s;
+            }
+            .c-inputs button:active{
+              transform: scale(1.02);
+            }
+            .map{
+              filter: grayscale(0.2);
+              box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+              border: 2px solid #FFFFFF;
+            }
+            @media(max-width:1100px){
+              .map{
+                display: none;
+              }
+            }
+            @media(max-width:450px){
+              .social2{
+                display: none;
+              }
+              .contact-box{
+                width: 100%;
+                height: 100vh;
+                box-sizing: border-box;
+              }
+               #contact{
+                position: static;
+                transform: translate(0,0);
+                width: 100%;
+                height: 100vh;
+                box-sizing: border-box;
+              }
+              .c-heading h1{
+                font-size: 2.2rem;
+                text-align: center;
+              }
+            }
       </style>
 </head>
 
@@ -326,13 +473,41 @@
     <script src="LoginScript.js">
     </script>
     <section class="one">
-      <div class="content">
+      <div id="contact">
+          <div class="social2">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+          <div class="contact-box">
+            <div class="c-heading">
+            <h1>Get In Touch</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+            <div class="c-inputs">
+              <input type="text" placeholder="Full Name"/>
+              <input type="email" placeholder="Example@gmail.com"/>
+              <textarea name="message" placeholder="Write Message"></textarea>
+              <button>SEND</button>
+
+            </div>
+          </div>
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9360.667303431694!2d151.01754078541313!3d-33.95409744505719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bee80170a93d%3A0x508110eec7ed59aa!2s41%20McGirr%20St%2C%20Padstow%20NSW%202211!5e0!3m2!1sen!2sau!4v1650953092196!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+      </div>
+      <!--<div class="content">
         <h1>About us</h1>
         <p class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
-      </div>
+      </div>-->
     </section>
     <section class="two">
       <p class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+
+
+
     </section>
     <section class="three">
         <h1>Extra 1</h1>

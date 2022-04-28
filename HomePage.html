@@ -15,6 +15,7 @@
           height: 100vh;
           overflow-y: scroll;
           scroll-snap-type: y mandatory;
+          overflow-x:hidden;
         }
         .content{
           position: relative;
@@ -66,7 +67,7 @@
         .two .heading {
           position: relative;
           top: 0;
-          height: 50vh;
+          height: 30vh;
           width: 100%;
           background-color: white;
           overflow: hidden;
@@ -74,72 +75,46 @@
         .two .subheading {
           position: relative;
           top: 0;
-          height: 50vh;
+          height: 70vh;
           width: 100%;
-          background-color: #F58427;
+          background-color: #7CCBDC;
           overflow: hidden;
         }
         .two #orange h1{
-          color: #F58427;
-          font-size: 9vw;
+          color: #7CCBDC;
+          font-size: 90px;
           position: relative;
-          bottom: 37.5vh;
-          left: 5vw;
+          bottom: 52.5vh;
           padding-top: 67vh;
+          left: 5vw;
         }
         .two #white p{
           color: black;
           color: white;
           font-size: inherit;
           position: absolute;
-          width: 41vw;
-          font-size: 1.5vw;
-          left: 5vw;
+          width: 45vw;
+          font-size: 24px;
+          left: 4vw;
           text-align: justify;
           padding-top: 2vh;
-          line-height: 3.25vh;
+          line-height: auto;
         }
         .map2 {
           right: 3vw;
-          top: 25vh;
+          top: 35vh;
           position: absolute;
           border-radius: 5px;
           overflow: hidden;
           height: 60%;
           width: 40%;
           border: 4px white solid;
+          text-align: center;
           /*padding: 20% 0;*/
           display: block;
           margin-right: 3vw;
           margin-left: 50vw;
           box-shadow: 2px 2px 30px rgba(0,0,0,0.4);
-        }
-        @media(max-width:600px) {
-          .map2 {
-            top: 53vh;
-            margin-left: 0;
-            left: 5vw;
-            width: 88vw;
-            height: 42.5vh;
-            overflow: hidden;
-            }
-          .two #white p{
-            width: 90vw;
-            line-height: 3vh;
-            font-size: 1.7vw;
-          }
-          .two #orange h1{
-            text-align: center;
-            left: 0vw;
-            bottom: 57.5vh;
-          }
-          .two .heading{
-            height: 30vh;
-          }
-          .two .subheading{
-            height: 70vh;
-          }
-
         }
         .map2 iframe{
           position: absolute;
@@ -151,12 +126,154 @@
           text-align:center;
           display: block;
         }
+        .three {
+          background-color: white;
+          position: relative;
+          display: flex;
+          flex-flow: column wrap;
+        }
+        .three .heading {
+          position: relative;
+          top: 0;
+          height: 30vh;
+          width: 100%;
+          background-color: white;
+        }
+        .three .subheading {
+          position: relative;
+          top: 0;
+          height: 70vh;
+          width: 100%;
+          background-color: #fcc64a;
+          overflow: hidden;
+        }
+        .three #white2 h1{
+          color: #fcc64a;
+          font-size: 90px;
+          position: relative;
+          bottom: 52.5vh;
+          left: 5vw;
+          padding-top: 67vh;
+        }
+        .three #orange p{
+          color: white;
+          font-size: inherit;
+          position: absolute;
+          width: 45vw;
+          font-size: 24px;
+          left: 50vw;
+          text-align: justify;
+          padding-top: 2vh;
+          line-height: auto;
+        }
+        @media(max-width:600px) {
+          .map2 {
+            top: 60vh;
+            left: 5vw;
+            margin: auto;
+            text-align: center;
+            width: 88vw;
+            height: 34.5vh;
+            overflow: hidden;
+            
+            }
+          .two #white p{
+            width: 89vw;
+            font-size: 20px;
+            left: 5vw;
+            margin: auto;
+          }
+          .two #orange h1{
+            text-align: center;
+            bottom: 52.5vh;
+            font-size: 48px;
+            left: 0vw;
+          }
+          .three #orange p{
+            width: 90vw;
+            font-size: 18px;
+            left: 4vw;
+            margin: auto;
+          }
+          .three #white2 h1{
+            text-align: center;
+            bottom: 52.5vh;
+            font-size: 48px;
+            left: 0vw;
+          }
+          .heading{
+            height: 30vh;
+          }
+          .subheading{
+            height: 70vh;
+          }
+
+        }
         .four {
-          background-color: black;
+          background-image: url('img4.jpg');
           height: 100vh;
+          background-size: 250%;
           flex-direction: column;
           flex:1;
         }
+        .four .box {
+          position: relative;
+          width: 450px;
+          height: 300px;
+          display: inline-block;
+          background-color: white;
+          margin-top: 20vh;
+          box-shadow: 2px 2px 30px rgba(0,0,0,0.4);
+          justify-content: center;
+        }
+        .four .box h1{
+          color: #A83C56;
+          padding-top: 0vh;
+          text-align: center;
+          font-size: 50px;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          height: 120px;
+        }
+        .four .box p{
+          width: 100%;
+          color: #A83C56;
+          text-align: center;
+          font-size: 16px;
+          position: relative;
+          margin: 0;
+          padding: 0;
+        }
+        .four .box button{
+          margin-top: 30px;
+          margin-left: 160px;
+          display: inline-block;
+          outline: none;
+          cursor: pointer;
+          font-size: 18px;
+          line-height: 20px;
+          font-weight: 600;
+          border-radius: 8px;
+          padding: 14px 24px;
+          border: none;
+          transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+          background: #A83C56;
+          color: #fff;
+        }
+        @media(max-width:600px){
+          .four .box{
+            width: 350px;
+            height: 300px;
+          }
+          .four .box button{
+            margin-left: 110px;
+          }
+          .four .box p {
+            font-size: 16px;
+          }
+        }
+
         .four .footer {
           padding: 5vh;
           background-color: #fff;
@@ -514,6 +631,107 @@
                  -webkit-mask: url(#mask);
                  mask: url(#mask);
              }
+             .animatednum {
+               background-color: #fcc64a;
+               position: absolute;
+               width: 40vw;
+               height: 55vh;
+               left: 5vw;
+               top: 35vh;
+               overflow: hidden;
+             }
+             .small-container{
+               position: relative;
+               width: 100%;
+               height: 11.27vh;
+               background-color: #fcc64a;
+               z-index: 4;
+               display: inline-block;
+               font-size: 60px;
+               text-align: center;
+               margin-bottom: 4px;
+               padding-top: 5vh;
+               font-weight: bold;
+               color: white;
+             }
+             .line {
+               height: 3px;
+               position: relative;
+               width: 100%;
+               background-color: white;
+             }
+             .small-container p{
+               font-size: 14px;
+               font-weight: bold;
+               width: 39vw;
+               top: 10.5vh;
+               position: absolute;
+             }
+             @media(max-width:600px)
+             {
+               .animatednum {
+                 top: 77vh;
+                 height: 20vh;
+                 width: 100%;
+                 left: 2vw;
+                 margin: auto;
+               }
+               .small-container{
+                 display: flex;
+                 width: 25vw;
+                 height: 20vh;
+                 float: left;
+                 padding-left: 6vw;
+                 font-size: 45px;
+               }
+               .line {
+                 float: left;
+                 width: 3px;
+                 position: relative;
+                 height: 100%;
+                 background-color: white;
+               }
+               #last {
+                 display: none;
+                 float: none;
+               }
+               .small-container p{
+                 width: 18vw;
+                 font-size: 12px;
+                 top: 11vh;
+               }
+             }
+             @property --num {
+               syntax: '<integer>';
+               inherits: false;
+               initial-value: 0;
+             }
+
+             .small-container::before {
+               counter-increment: my-counter var(--num);
+               content: counter(my-counter) "+";
+               animation: count2 10s ease-in-out forwards;
+             }
+             #one::before {
+               animation: count1 10s ease-in-out forwards;
+             }
+              #two::before {
+               animation: count2 10s ease-in-out forwards;
+              }
+              #three::before {
+                animation: count3 10s ease-in-out forwards;
+               }
+             @keyframes count1 {
+               to { --num: 50; }
+             }
+
+             @keyframes count2 {
+               to { --num: 15; }
+             }
+             @keyframes count3 {
+               to { --num: 150; }
+             }
+           }
       </style>
 </head>
 
@@ -620,17 +838,33 @@
           <h1>About us:</h1>
         </div>
         <div class="subheading" id="white">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
-        </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi.</p></div>
         <div class="map2">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9360.667303431694!2d151.01754078541313!3d-33.95409744505719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bee80170a93d%3A0x508110eec7ed59aa!2s41%20McGirr%20St%2C%20Padstow%20NSW%202211!5e0!3m2!1sen!2sau!4v1650953092196!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
     <section class="three">
-
+      <div class="heading" id="white2">
+        <h1>Our services:</h1>
+      </div>
+      <div class="subheading" id="orange">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+      </div>
+      <div class="animatednum">
+        <div class="small-container" id="one"><p>Classes</p></div>
+        <div class="line"></div>
+        <div class="small-container" id="two"><p>Staff</p></div>
+        <div class="line"></div>
+        <div class="small-container" id="three"><p>Graduates</p></div>
+        <div class="line" id="last"></div>
+  </div>
     </section>
     <section class="four">
-        <h1>Extra 1</h1>
+        <div class="box">
+        <h1>Applications</h1>
+        <p>Applications are open now! Don't miss your chance to enrol your child at Padstow</p>
+        <button type="button">Enrol now</button>
+        </div>
         <section class="footer">
           <div class="social">
             <a href="#"<i class ="fab fa-facebook-f"></i></a>

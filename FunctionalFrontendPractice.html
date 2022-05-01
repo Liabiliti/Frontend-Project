@@ -1,187 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title></title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #FFFFFF;
-    }
-    a {
-      text-decoration: none;
-    }
-    .social a{
-      padding: 20px;
-      color: #7b7c7c;
-      font-size: 1.1rem;
-    }
-    #contact{
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform:translate(-50%,-50%);
-      display: flex;
-      align-items:center;
-    }
-    .social {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #FFFFFF;
-      box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-    }
-    .social a:hover{
-      color: #000000;
-      transition: all ease 0.3s;
-    }
-    .contact-box{
-    	background-color:#434445;
-    	display: flex;
-    	flex-direction: column;
-    	justify-content: center;
-    	align-items: center;
-    	padding: 30px 30px;
-    	box-shadow: 2px 0px 30px rgba(0,0,0,0.1);
-      width: 250px;
-    }
-    .c-heading h1 {
-      text-align: center;
-      color: #e7eef3;
-      font-size: 2.5rem;
-      font-weight: lighter;
-      margin: 0px;
-      padding: 0px;
-    }
-    .c-heading p{
-      font-family: Biko, sans-serif;
-      color: #cecece;
-      font-size: 0.8rem;
-      font-weight: lighter;
-      margin: 0px;
-      padding: 0px;
-      text-align: center;
-    }
-    .c-inputs{
-      margin: 15px 0px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .c-inputs input{
-  	width:250px;
-  	height: 45px;
-  	background-color: transparent;
-  	border: none;
-  	border-bottom: 1px solid rgba(251,251,251,0.1);
-  	outline: none;
-  	margin: 10px 0px;
-  	padding: 10px;
-  	box-sizing: border-box;
-  	color: #f4f4f4;
-  	display: flex;
-  }
-    .c-inputs textarea{
-      width: 250px !important;
-      height: 200px !important;
-      outline: none;
-      background-color: rgba(0,0,0,0.1);
-      border: 1px solid rgba(82,82,82,1);
-      color: #f4f4f4;
-      padding: 10px;
-      font-size: 1.2rem;
-      box-sizing: border-box;
-    }
-    .c-inputs button{
-      width: 200px;
-      height: 40px;
-      background-color: #FFFFFF;
-      border: none;
-      outline: none;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-      letter-spacing: 1px;
-    }
-    .c-inputs input:focus{
-      border-bottom: 1px solid rgba(252,252,252,1.00);
-      transition: all ease 0.5s;
-    }
-    .c-inputs textarea:focus{
-      border: none;
-      border-bottom: 1px solid rgba(255,255,255,1.00);
-      transition: all ease 0.5s;
-    }
-    .c-inputs button:active{
-      transform: scale(1.02);
-    }
-    .map{
-      filter: grayscale(0.2);
-      box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
-      border: 2px solid #FFFFFF;
-    }
-    @media(max-width:1100px){
-      .map{
-        display: none;
-      }
-    }
-    @media(max-width:450px){
-      .social{
-        display: none;
-      }
-      .contact-box{
-        width: 100%;
-        height: 100vh;
-        box-sizing: border-box;
-      }
-      #contact{
-        position: static;
-        transform: translate(0,0);
-        width: 100%;
-        height: 100vh;
-        box-sizing: border-box;
-      }
-      .c-heading h1{
-        font-size: 2.2rem;
-        text-align: center;
 
-      }
-    }
- </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
+  <title>Frontend Mentor | Four card feature section</title>
+  <link rel="stylesheet" href="styles.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+    rel="stylesheet">
+    <style>
+    @import "bourbon";
+@import "neat";
+
+$base-duration: 500ms;
+
+// Colors
+$color-1: #2c3e50;
+$color-2: #1abc9c;
+$color-3: #2ecc71;
+
+// Breakpoints
+$sm: new-breakpoint(min-width 320px);
+$med: new-breakpoint(min-width 768px);
+$lg: new-breakpoint(min-width 1024px);
+
+*, *:before, *:after {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-smooth: auto;
+	font-weight: 300;
+	line-height: 1.5;
+	color: #444;
+}
+
+body {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	// background-color:darken($color-1, 4%);
+}
+
+figure {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 375px;
+	height: 667px;
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	overflow: hidden;
+	&:hover {
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+		img {
+			transform: scale(1.25);
+		}
+		figcaption {
+			bottom: 0;
+		}
+	}
+	h1 {
+		position: absolute;
+		top: 50px;
+		left: 20px;
+		margin: 0;
+		padding: 0;
+		color: white;
+		font-size: 60px;
+		font-weight: 100;
+		line-height: 1;
+	}
+	img {
+		height: 100%;
+		transition: 0.25s;
+	}
+	figcaption {
+		position: absolute;
+		bottom: -33%;
+		left: 0;
+		width: 100%;
+		//height: 50%;
+		margin: 0;
+		padding: 30px;
+		background-color: rgba(black,0.85);
+		box-shadow: 0 0 20px rgba(black,0.4);
+		color: white;
+		line-height: 1;
+		transition: 0.25s;
+		h3 {
+			margin: 0 0 20px;
+			padding: 0;
+		}
+		p {
+			font-size: 14px;
+			line-height: 1.75;
+		}
+		button {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 10px 0 0;
+			padding: 10px 30px;
+			background-color: $color-2;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			font-size: 14px;
+		}
+	}
+}
+    </style>
 </head>
+
 <body>
-  <section id="contact">
-      <div class="social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-snapchat"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <div class="contact-box">
-        <div class="c-heading">
-        <h1>Get In Touch</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      </div>
-        <div class="c-inputs">
-          <input type="text" placeholder="Full Name"/>
-          <input type="email" placeholder="Example@gmail.com"/>
-          <textarea name="message" placeholder="Write Message"></textarea>
-          <button>SEND</button>
-
-        </div>
-      </div>
-      <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9360.667303431694!2d151.01754078541313!3d-33.95409744505719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bee80170a93d%3A0x508110eec7ed59aa!2s41%20McGirr%20St%2C%20Padstow%20NSW%202211!5e0!3m2!1sen!2sau!4v1650953092196!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-  </section>
-
+  <figure class="image-block">
+  	<h1>The Beach</h1>
+  	<img src="https://images.pexels.com/photos/1680140/pexels-photo-1680140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" />
+  	<figcaption>
+  		<h3>
+  			More Info
+  		</h3>
+  		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+  		<button>
+  			More Info
+  		</button>
+  	</figcaption>
+  </figure>
 </body>
+
 </html>

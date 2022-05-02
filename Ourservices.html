@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title></title>
-      <meta content="width=device-width" name="viewport">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <style type="text/css">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style type="text/css">
         body {
           margin: 0;
           padding: 0;
@@ -45,7 +47,7 @@
           font-size: 24px;
         }
         .two {
-          background-color: white;
+          background-color: #A83C56;
         }
         .three {
           background-color: black;
@@ -284,66 +286,53 @@
               background: #4889da;
               color: #f5f5f5;
             }
-            .testimonials {
-              padding: 40px;
-              background: #f5f5f5;
-              color: #434343;
-              text-align: center;
+            .carousel{
+              height: 600px;
+              perspective: 250px;
+              position: relative;
+              display: inline-block;
+              top: 20vh;
             }
-            .inner {
-              /*max-width: 1200px;*/
-              max-width: 100%;
-              margin: auto;
-              overflow: hidden;
-              padding: 0 20px;
-            }
-            .border{
-              width: 160px;
-              height: 5px;
-              background: #6ab04c;
-              margin: 26px auto;
-            }
-            .row {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-            }
-            .col {
-              flex: 33.33%;
-              max-width: 33.33%;
-              box-sizing: border-box;
-              padding: 15px;
-            }
-            .testimonial {
+            .carousel .carousel-item {
+              width: 450px;
               background: #fff;
-              padding: 30px;
+              padding: 50px;
+              height: 400px;
+              text-align: center;
+              border-radius: 15px;
             }
-            .testimonial img {
+            .img-area {
               width: 100px;
               height: 100px;
+              margin: 0 auto;
+              overflow: hidden;
               border-radius: 50%;
+              border: inset 8px deepskyblue;
+              }
+              .img-area img{
+                    width: 100%;
+              }
+            .testi p {
+              color: #262626;
+              font-size: 18px;
+              line-height: 1.9;
             }
-            .name{
-              font-size: 20px;
-              text-transform: uppercase;
-              margin: 0 20px;
+              .testi h4 {
+                font-size: 20px;
+                margin: 0;
+                color: #000;
             }
-            .stars {
-              color: #6ab04c;
-              margin-bottom: 20px;
+              .testi h5 {
+                font-size: 14px;
+                letter-spacing: 5px;
+                margin: 7px 0;
             }
-            @media screen and (max-width:960px)
-              { .col {
-               flex: 100%;
-               max-width: 80%;
+            @media(max-width:600px){
+              .carousel{
+                  perspective: 1200px;
               }
             }
-            @media screen and (max-width:600px)
-              { .col {
-               flex: 100%;
-               max-width: 100%;
-              }
-            }
+
       </style>
 </head>
 
@@ -392,60 +381,77 @@
         <p class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
       </div>
     </section>
-    <section class="two">
-      <p class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
-    </section>
     <section class="three">
-      <div class="testimonials">
-        <div class="inner">
-          <h1>Testimonials</h1>
-          <div class="border"></div>
-          <div class="row">
-            <div class="col">
-              <div class="testimonial">
-                <img src="person1.jpg" alt="">
-                <div class="name">Full name</div>
-                <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="far fa-star"></i>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+      <h1>Testimonials</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+      <div class="carousel">
+          <a class="carousel-item" href="#">
+              <div class="testi">
+                  <div class="img-area">
+                      <img src="IronMan.png">
+                  </div>
+                  <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
+                  <h4>Tony Stark</h4>
+                  <h5></h5>
               </div>
-            </div>
-            <div class="col">
-              <div class="testimonial">
-                <img src="person2.jpg" alt="">
-                <div class="name">Full name</div>
-                <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </a>
+          <a class="carousel-item" href="#">
+              <div class="testi">
+                  <div class="img-area">
+                      <img src="person3.jpg">
+                  </div>
+                  <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
+                  <h4>Natalie Jones</h4>
+                  <h5>Web Designer</h5>
               </div>
-            </div>
-            <div class="col">
-              <div class="testimonial">
-                <img src="person3.jpg" alt="">
-                <div class="name">Full name</div>
-                <div class="stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </a>
+          <a class="carousel-item" href="#">
+              <div class="testi">
+                  <div class="img-area">
+                      <img src="person1.jpg">
+                  </div>
+                  <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
+                  <h4>Steve Johns</h4>
+                  <h5>Web Designer</h5>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          </a>
+          <a class="carousel-item" href="#">
+              <div class="testi">
+                  <div class="img-area">
+                      <img src="person2.jpg">
+                  </div>
+                  <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
+                  <h4>Carol Danvers</h4>
+                  <h5>Web Designer</h5>
+              </div>
+          </a>
+          <a class="carousel-item" href="#">
+              <div class="testi">
+                  <div class="img-area">
+                      <img src="JonDoe.jpeg">
+                  </div>
+                  <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
+                  <h4>Jon Doe</h4>
+                  <h5>Web Designer</h5>
+              </div>
+          </a>
+     </div>
+      <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.carousel').carousel({
+  			padding: 200
+  	});
+  	autoplay();
+  	function autoplay() {
+  		$('.carousel').carousel('next');
+  		setTimeout(autoplay, 4500);
+  	}
+    });
+  </script>
+
         <section class="footer">
           <div class="social">
             <a href="#"<i class ="fab fa-facebook-f"></i></a>

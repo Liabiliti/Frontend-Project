@@ -17,7 +17,8 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      background-color: yellow;
+      background: url('img1.jpg');
+      background-size: cover;
     }
     .container{
       width: 330px;
@@ -25,6 +26,8 @@
       border-radius: 5px;
       text-align: center;
       padding: 50px 35px 10px 35px;
+      box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+      z-index: 0;
     }
     .container header{
       font-size: 2.1875em;
@@ -55,8 +58,8 @@
       margin: 35px 0;
       display: flex;
       position: relative;
-
     }
+
     .form-outer form .page .field .label{
       position: absolute;
       top: -30px;
@@ -90,14 +93,15 @@
       letter-spacing: 1px;
       cursor: pointer;
       transition: 0.3s ease;
+
     }
     .form-outer form .page .field button:hover{
-      background: yellow;
+      background: #A7BE39;
+      color: white;
     }
     .form-outer form .page .btns button {
-      margin-top: -20px!important;
+      margin-top: -10px!important;
     }
-
     form .page .btns button.prev{
       margin-right: 3px;
       font-size: 17px;
@@ -123,7 +127,7 @@
     }
 
     .progress-bar .step p.active{
-      color: green;
+      color: #A7BE39;
     }
 
     .progress-bar .step .bullet{
@@ -139,8 +143,8 @@
       transition: 0.2s;
     }
     .progress-bar .step .bullet.active{
-      border-color: green;
-      background: green;
+      border-color: #A7BE39;
+      background: #A7BE39;
     }
     .progress-bar .step:last-child .bullet:before,
     .progress-bar .step:last-child .bullet:after{
@@ -158,7 +162,7 @@
       }
 
       .progress-bar .step .bullet.active:after{
-        background: green;
+        background: #A7BE39;
         animation: animate 0.3s linear forwards;
         transform: ScaleX(0);
         transform-origin: left;
@@ -194,12 +198,227 @@
       display: block;
       color: #fff;
     }
-
+    .nextBtn {
+      margin-top: -8px!important;
+    }
+    #menu__toggle {
+        opacity: 0;
+        }
+    #menu__toggle:checked + .menu__btn > span {
+        transform: rotate(45deg);
+        }
+    #menu__toggle:checked + .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0deg);
+        }
+    #menu__toggle:checked + .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+        }
+    #menu__toggle:checked ~ .menu__box {
+        left: 0 !important;
+        }
+    .menu__btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 3;
+        margin: 0;
+        }
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+        }
+  .menu__btn > span::before {
+        content: '';
+        top: -8px;
+        }
+  .menu__btn > span::after {
+        content: '';
+        top: 8px;
+        }
+  .menu__box {
+        display: block;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        background-color: #ECEFF1;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        }
+  .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+        }
+  .menu__item:hover {
+        background-color: #CFD8DC;
+        }
+        .hamburger-menu{
+          font-family: Biko, sans-serif!important;
+        }
+        .center {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .popup-overlay {
+          position: fixed;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100vh;
+          z-index: 1;
+          background: rgba(0,0,0,0.5);
+          display: none;
+        }
+        .popup {
+          position: absolute;
+          top: -150%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(1.15);
+          width: 300px;
+          height: 440px;
+          background: #f5f5f5;
+          z-index: 2;
+          opacity: 0;
+          border-radius: 5px;
+          box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+          transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+        }
+        body.showLoginForm .popup-overlay {
+          display: block;
+        }
+        body.showLoginForm .popup {
+          top: 50%;
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        .popup .popup-close{
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 40px;
+          height: 40px;
+          background: #555;
+          color: #f5f5f5;
+          font-size: 25px;
+          font-weight: 600;
+          text-align:center;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .popup .form .avatar{
+          margin: 30px 0px 20px;
+          text-align: center;
+        }
+        .popup .form .avatar img {
+          width: 130px;
+          border-radius: 50%;
+        }
+        .popup .form .header {
+          text-align: center;
+          font-size: 20px;
+          font-weight: 600;
+          color:#222;
+          margin-bottom:5px;
+        }
+        .popup .form .element{
+          padding: 8px 20px;
+        }
+        .popup .form .element label{
+          display: block;
+          font-size: 14px;
+          color: #222;
+          margin-bottom:5px;
+        }
+        .popup .form .element input{
+          width: 100%;
+          padding: 8px 10px;
+          box-sizing: border-box;
+          outline: none;
+          border: 1px solid #aaa;
+          background: #eee;
+          border-radius: 5px;
+          font-family: Biko, sans-serif!important;
+        }
+        .popup .form .element button {
+          margin-top: 5px;
+          width: 100%;
+          padding: 10px 0px;
+          text-transform: uppercase;
+          outline: none;
+          border: none;
+          font-size: 15px;
+          font-weight: 600;
+          border-radius: 5px;
+          cursor: pointer;
+          background: #4889da;
+          color: #f5f5f5;
+        }
 
   </style>
 
 </head>
   <body>
+    <div class="hamburger-menu">
+      <input id="menu__toggle" type="checkbox" />
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <ul class="menu__box">
+            <li><a class="menu__item" href="HomePage2.html">Home</a></li>
+            <li><a class="menu__item" href="Aboutus.html">About us</a></li>
+            <li><a class="menu__item" href="Ourservices.html">Our services</a></li>
+            <li><a class="menu__item" href="Contactus.html">Contact us</a></li>
+            <li><a class="menu__item" href="MultiStepForm.html">Applications</a></li>
+            <li><a class="menu__item" href ="#" onclick="openLoginForm()">Login</a></li>
+          </ul>
+    </div>
+    <div class="popup-overlay"></div>
+    <div class="popup">
+      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+      <div class="form">
+          <div class="avatar">
+            <img src="https://bit.ly/31pHqJb" alt="">
+          </div>
+          <div class="header">Member login</div>
+          <div class="element">
+            <label for="username">Username</label>
+            <input type="text" id="username">
+          </div>
+          <div class="element">
+            <label for="password">Password</label>
+            <input type="text" id="password">
+          </div>
+          <div class="element">
+            <button>Login</button>
+          </div>
+      </div>
+    </div>
+    <script src="LoginScript.js">
+    </script>
     <div class="container">
     <header>Application Form</header>
     <div class="progress-bar">
@@ -295,6 +514,7 @@
                     <option>Other</option>
                   </select>
                 </div>
+                <div class="field"></div>
                 <div class="field btns">
                   <button class = "prev-1 prev">Previous</button>
                   <button class = "next-1 next">Next</button>
@@ -303,6 +523,7 @@
                 <!--The form is if the child has allergies -->
                 <div class="page">
                   <div class="title">Allergy Info: </div>
+
                 <div class="field">
                   <div class = "label">Does your child have allergies?</div>
                   <input type="radio" id="yes" name="AllergyOption" value="yes">
@@ -310,6 +531,10 @@
                   <input type="radio" id="no" name="AllergyOption" value="no">
                   <label for="no">No</label>
                 </div>
+                <div class="field"></div>
+                <div class="field"></div>
+                <div class="field"></div>
+                <div class="field"></div>
                   <div class="field btns">
                     <button class = "prev-2 prev">Previous</button>
                     <button class = "next-2 next">Next</button>
@@ -337,6 +562,8 @@
                     <input type="radio" id="severe" name="AllergySeverity" value="severe">
                     <label for="moderate">Severe Reaction</label>
                   </div>
+                  <div class="field"></div>
+                  <div class="field"></div>
                     <div class="field btns">
                       <button class = "prev-3 prev">Previous</button>
                       <button class = "next-3 next">Next</button>
@@ -353,6 +580,10 @@
                     <input type="radio" id="no" name="MedicineOption" value="no">
                     <label for="no">No</label>
                   </div>
+                  <div class="field"></div>
+                  <div class="field"></div>
+                  <div class="field"></div>
+                  <div class="field"></div>
                     <div class="field btns">
                       <button class = "prev-4 prev">Previous</button>
                       <button class = "next-4 next">Next</button>
@@ -360,7 +591,7 @@
                 </div>
                   <!--If the above form is marked yes, this form will appear -->
                   <div class="page">
-                    <div class="title">Medicine Info: </div>
+                    <div class="title">Medicine Info:</div>
                 <div class="field">
                     <input type="text" placeholder="Medicine Name"> <!-- this will be autocomplete-->
                   </div>
@@ -368,6 +599,9 @@
                       <div class = "label">Dosage:</div>
                       <input type="text" placeholder="Medicine Dosage"> <!-- Make sure only numbers with a decimal go into this box-->
                   </div>
+                  <div class="field"></div>
+                  <div class="field"></div>
+                  <div class="field"></div>
                   <div class="field btns">
                     <button class = "prev-5 prev">Previous</button>
                     <button class = "next-5 next">Next</button>
@@ -385,6 +619,8 @@
                   <div class="field">
                     <input type="text" placeholder="Doctors Address"> <!-- This will be autocomplete with google api-->
                   </div>
+                  <div class="field"></div>
+                  <div class="field"></div>
                   <div class="field btns">
                     <button class = "prev-6 prev">Previous</button>
                     <button class = "submit">Submit</button>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title></title>
+      <title>Home</title>
       <meta content="width=device-width" name="viewport">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <style type="text/css">
@@ -79,6 +79,7 @@
           width: 100%;
           background-color: #7CCBDC;
           overflow: hidden;
+          text-align: center;
         }
         .two #orange h1{
           color: #7CCBDC;
@@ -147,6 +148,7 @@
           width: 100%;
           background-color: #fcc64a;
           overflow: hidden;
+          text-align: center;
         }
         .three #white2 h1{
           color: #fcc64a;
@@ -167,6 +169,26 @@
           padding-top: 2vh;
           line-height: auto;
         }
+        @media (max-width:1633px){
+          .span4 {
+            visibility:hidden;
+          }
+        }
+        @media (max-width:1180px){
+          .span3 {
+            visibility:hidden;
+          }
+        }
+        @media (max-width:967px){
+          .span2 {
+            visibility:hidden;
+          }
+        }
+        @media (max-width:667px){
+          .span1 {
+            visibility:hidden;
+          }
+        }
         @media(max-width:600px) {
           .map2 {
             top: 60vh;
@@ -176,7 +198,12 @@
             width: 88vw;
             height: 34.5vh;
             overflow: hidden;
-
+            }
+            .two .span1{
+              visibility: hidden;
+            }
+            .two .SE{
+              visibility: hidden;
             }
           .two #white p{
             width: 89vw;
@@ -196,6 +223,10 @@
             left: 4vw;
             margin: auto;
           }
+          .span1{
+            visibility: visible;
+          }
+
           .three #white2 h1{
             text-align: center;
             bottom: 52.5vh;
@@ -209,6 +240,38 @@
             height: 70vh;
           }
 
+        }
+        @media (max-width:469px){
+          .span1 {
+            visibility:hidden;
+          }
+          .two .s8{
+            visibility: hidden;
+          }
+        }
+        @media(max-height:800px)
+        {
+          .span3 {
+            visibility:hidden;
+          }
+          .s8{
+            visibility: hidden;
+          }
+        }
+        @media(max-height:740px)
+        {
+          .SE{
+            visibility: hidden;
+          }
+          .span1 {
+            visibility:hidden;
+          }
+          .span2 {
+            visibility:hidden;
+          }
+          .span3 {
+            visibility:hidden;
+          }
         }
         .four {
           background-image: url('img4.jpg');
@@ -245,10 +308,13 @@
           position: relative;
           margin: 0;
           padding: 0;
-        }.two button{
-          margin: auto;
+        }
+        .two button{
+          width:141.05px;
+          margin:0 auto;
+          text-align:center;
           top: 80%;
-          left: 16.5%;
+          /*left: 19.5%;*/
           position: absolute;
           display: inline-block;
           outline: none;
@@ -265,10 +331,15 @@
           color: #fff;
           z-index: 2;
         }
+        .two button:hover{
+          filter: brightness(110%);
+        }
         .three button{
-          margin: auto;
-          top: 70%;
-          left: 62.5%;
+          width:141.05px;
+          margin: 0 auto;
+          text-align:center;
+          top: 80%;
+          /*left: 19.5%;*/
           position: absolute;
           display: inline-block;
           outline: none;
@@ -280,10 +351,13 @@
           padding: 14px 24px;
           border: none;
           transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
-          background: #fcc64a;
+          background: #FCC64A;
           filter: brightness(95%);
           color: #fff;
           z-index: 2;
+        }
+        .three button:hover{
+          filter: brightness(110%);
         }
 
         .four .box button{
@@ -303,6 +377,20 @@
           color: #fff;
         }
 
+        .four .box button:hover{
+          background-color: #CC4969;
+
+        }
+        @media (min-width:601px) {
+          .three button{
+            left: 72%;
+            transform: translateX(-50%);
+          }
+          .two button{
+            left: 26%;
+            transform: translateX(-50%);
+          }
+        }
         @media(max-width:600px){
           .four .box{
             width: 350px;
@@ -315,14 +403,18 @@
             font-size: 16px;
           }
           .three button{
-            margin: auto;
-            top: 52.5%;
-            left: 35%;
+            width:141.05px;
+            margin:0 auto;
+            text-align:center;
+            top: 69%;
+            left: empty;
           }
           .two button{
-            margin: auto;
             top: 51.5%;
-            left: 35%;
+            width:141.05px;
+            margin:0 auto;
+            text-align:center;
+
           }
         }
 
@@ -795,7 +887,7 @@
             <span></span>
           </label>
           <ul class="menu__box">
-            <li><a class="menu__item" href="HomePage2.html">Home</a></li>
+            <li><a class="menu__item" href="HomePage.html">Home</a></li>
             <li><a class="menu__item" href="Aboutus.html">About us</a></li>
             <li><a class="menu__item" href="Ourservices.html">Our services</a></li>
             <li><a class="menu__item" href="Contactus.html">Contact us</a></li>
@@ -890,8 +982,8 @@
           <h1>About us:</h1>
         </div>
         <div class="subheading" id="white">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi.</p></div>
-          <button type="button">Read more</button>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. <span class="s8">Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi.</span><span class="SE">Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span><span class="span1"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span><span class="span2"><br></br>Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span> <span class="span3"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span></p></div>
+          <a href="Aboutus.html"><button type="button">Read more</button></a>
         <div class="map2">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9360.667303431694!2d151.01754078541313!3d-33.95409744505719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bee80170a93d%3A0x508110eec7ed59aa!2s41%20McGirr%20St%2C%20Padstow%20NSW%202211!5e0!3m2!1sen!2sau!4v1650953092196!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -901,9 +993,9 @@
         <h1>Our services:</h1>
       </div>
       <div class="subheading" id="orange">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</p>
-         <button type="button">Read more</button>
-      </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. <span class="SE">Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span><span class="span1"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span><span class="span2"><br></br>Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span><span class="span3"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span><span class="span4"><br></br>Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis.</span></p>
+        </div>
+      <a href="Ourservices.html"><button type="button">Read more</button></a>
       <div class="animatednum">
         <div class="small-container" id="one"><p>Classes</p></div>
         <div class="line"></div>
@@ -917,7 +1009,7 @@
         <div class="box">
         <h1>Applications</h1>
         <p>Applications are open now! Don't miss your chance to enrol your child at Padstow</p>
-        <button type="button">Enrol now</button>
+        <a href="Applications.html"><button type="button">Enrol now</button></a>
         </div>
         <section class="footer">
           <div class="social">
@@ -928,19 +1020,19 @@
           </div>
           <ul class="list">
             <li>
-              <a href="#">Home</a>
+              <a href="HomePage.html">Home</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="Aboutus.html">About</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a href="Ourservices.html">Services</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="Contactus.html">Contact</a>
             </li>
             <li>
-              <a href="MultiStepForm.html">Applications</a>
+              <a href="Applications.html">Applications</a>
             </li>
           </ul>
           <p class="copyright">

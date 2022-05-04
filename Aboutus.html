@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-      <title></title>
+      <title>About us</title>
       <meta content="width=device-width" name="viewport">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <style type="text/css">
+
         body {
           margin: 0;
           padding: 0;
@@ -29,8 +30,205 @@
         }
 
         .one{
-          background-color: black;
+          background: url('img3.jpg');
+          position: relative;
+          display: flex;
+          flex-flow: column wrap;
+          overflow: hidden;
         }
+        .one .heading {
+          position: relative;
+          top: 0;
+          height: 30vh;
+          width: 100%;
+          background: url('img3.jpg');
+          background-size: cover;
+          overflow: hidden;
+        }
+        .one .subheading {
+          position: relative;
+          top: 0;
+          height: 70vh;
+          width: 100%;
+          background-color: #7CCBDC;
+          overflow: hidden;
+          text-align: center;
+        }
+        .one #orange h1{
+          color: #7CCBDC;
+          font-size: 90px;
+          position: relative;
+          bottom: 52.5vh;
+          padding-top: 67vh;
+          left: 5vw;
+        }
+        .one #white p{
+          color: black;
+          color: white;
+          font-size: inherit;
+          position: absolute;
+          width: 45vw;
+          font-size: 20px;
+          left: 4vw;
+          text-align: justify;
+          padding-top: 2vh;
+          line-height: auto;
+        }
+
+        .map2 {
+          right: 3vw;
+          top: 35vh;
+          position: absolute;
+          border-radius: 5px;
+          overflow: hidden;
+          height: 60%;
+          width: 40%;
+          border: 4px white solid;
+          text-align: center;
+          /*padding: 20% 0;*/
+          display: block;
+          margin-right: 3vw;
+          margin-left: 50vw;
+          box-shadow: 2px 2px 30px rgba(0,0,0,0.4);
+        }
+        .map2 iframe{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 1000px;
+          height: 1000px;
+          text-align:center;
+          display: block;
+        }
+        .one button{
+          width:141.05px;
+          margin:0 auto;
+          text-align:center;
+          top: 80%;
+          /*left: 19.5%;*/
+          position: absolute;
+          display: inline-block;
+          outline: none;
+          cursor: pointer;
+          font-size: 18px;
+          line-height: 20px;
+          font-weight: 600;
+          border-radius: 8px;
+          padding: 14px 24px;
+          border: none;
+          transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+          background: #7CCBDC;
+          filter: brightness(95%);
+          color: #fff;
+          z-index: 1;
+        }
+        .one button:hover{
+          filter: brightness(110%);
+        }
+        @media (min-width:601px) {
+          .one button{
+            left: 26%;
+            transform: translateX(-50%);
+          }
+        }
+        @media(max-width:600px){
+          .one button{
+            top: 51.5%;
+            width:141.05px;
+            margin:0 auto;
+            text-align:center;
+          }
+              .map2 {
+                top: 60vh;
+                left: 5vw;
+                margin: auto;
+                text-align: center;
+                width: 88vw;
+                height: 34.5vh;
+                overflow: hidden;
+                }
+                .one .span1{
+                  visibility: hidden;
+                }
+                .one .SE{
+                  visibility: hidden;
+                }
+              .one #white p{
+                width: 89vw;
+                font-size: 20px;
+                left: 5vw;
+                margin: auto;
+              }
+              .one #orange h1{
+                text-align: center;
+                bottom: 52.5vh;
+                font-size: 48px;
+                left: 0vw;
+              }
+              .span1{
+                visibility: visible;
+              }
+
+              .heading{
+                height: 30vh;
+              }
+              .subheading{
+                height: 70vh;
+              }
+            }
+            @media (max-width:469px){
+              .span1 {
+                visibility:hidden;
+              }
+              .one .s8{
+                visibility: hidden;
+              }
+            }
+            @media(max-height:800px)
+            {
+              .span3 {
+                visibility:hidden;
+              }
+              .s8{
+                visibility: hidden;
+              }
+            }
+            @media(max-height:740px)
+            {
+              .SE{
+                visibility: hidden;
+              }
+              .span1 {
+                visibility:hidden;
+              }
+              .span2 {
+                visibility:hidden;
+              }
+              .span3 {
+                visibility:hidden;
+              }
+            }
+            @media (max-width:1633px){
+              .span4 {
+                visibility:hidden;
+              }
+            }
+            @media (max-width:1180px){
+              .span3 {
+                visibility:hidden;
+              }
+            }
+            @media (max-width:967px){
+              .span2 {
+                visibility:hidden;
+              }
+            }
+            @media (max-width:667px){
+              .span1 {
+                visibility:hidden;
+              }
+            }
         h1 {
           font-size: 8vw;
           line-height: 150px;
@@ -46,10 +244,154 @@
         }
         .two {
           background-color: white;
+          position: relative;
+          display: flex;
+          flex-flow: column wrap;
+          overflow: hidden;
+        }
+        .two .imgrow{
+          width: 900px;
+          height: 45vh;
+          position: relative;
+          margin-bottom: auto;
+          margin-top: 3vh;
+          background-color: black;
+          margin-left: 0%;
+          margin-right: 0%;
+          background: url('img4.jpg');
+          background-size: cover;
+        }
+        .two .imgrow h1{
+          width: 450px;
+          height: 100px;
+          font-size: 50px;
+          padding-top: 10vh;
+          position: relative;
+          margin-left: 2.5%;
+          margin-right: auto;
+
+        }
+        .two .imgrow p{
+          width: 450px;
+          height: 100px;
+          font-size: 20px;
+          padding-top: 0vh;
+          color: white;
+          position: relative;
+          margin-left: 2.5%;
+          margin-right: auto;
+        }
+        .two .imgrow2{
+          width: 900px;
+          height: 45vh;
+          position: relative;
+          margin: auto;
+          top: -1vh;
+          background-color: blue;
+          margin-left: 0%;
+          margin-right: 0%;
+          background: url('img1.jpg');
+          background-size: cover;
+        }
+        .two .imgrow2 h1{
+          width: 450px;
+          height: 100px;
+          font-size: 50px;
+          padding-top: 10vh;
+          position: relative;
+          margin-left: auto;
+          margin-right: 2.5%;
+        }
+        .two .imgrow2 p{
+          width: 450px;
+          height: 100px;
+          font-size: 20px;
+          padding-top: 0vh;
+          color: white;
+          position: relative;
+          margin-left: auto;
+          margin-right: 2.5%;
+        }
+        @media (min-width: 1600px){
+          .two .imgrow{
+            position: absolute;
+            right: 5vw;
+            top: 0;
+          }
+          .two .imgrow2{
+            position: absolute;
+            top: 51.7%;
+            left: 5vw;
+          }
+          .two .imgrow2 p{
+            left: 35vw;
+            color: black;
+          }
+          .two .imgrow2 h1{
+            left: 35vw;
+            color: black;
+          }
+          .two .imgrow p{
+            right: 35vw;
+            color: black;
+          }
+          .two .imgrow h1{
+            right: 35vw;
+            color: black;
+          }
+        }
+        @media (max-width:900px)
+        {
+          .two .imgrow2{
+            position: absolute;
+            right: -1.8%;
+            top: 51.7%;
+          }
+        }
+        @media (max-width:490px){
+          .two .imgrow{
+            position: absolute;
+            left: -1.8%;
+            top: 0%;
+          }
+          .two .imgrow p{
+            position: absolute;
+            width: 95vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            left: 1.5vw;
+            top: 50%;
+            text-align: center;
+          }
+          .two .imgrow h1{
+            position: absolute;
+            width: 95vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            left: 1.5vw;
+            text-align: center;
+          }
+          .two .imgrow2 p{
+            position: absolute;
+            width: 95vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            right: 1.5vw;
+            top: 50%;
+            text-align: center;
+          }
+          .two .imgrow2 h1{
+            position: absolute;
+            width: 95vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            right: 1.5vw;
+            text-align: center;
+          }
         }
         .three {
           background-color: black;
-          height: 100vh;
+          height: 10vh;
           flex-direction: column;
           flex:1;
         }
@@ -284,6 +626,7 @@
               background: #4889da;
               color: #f5f5f5;
             }
+
       </style>
 </head>
 
@@ -327,16 +670,26 @@
     <script src="LoginScript.js">
     </script>
     <section class="one">
-      <div class="content">
-        <h1>About us</h1>
-        <p class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+      <div class="heading" id="orange">
+        <h1>About us:</h1>
+      </div>
+      <div class="subheading" id="white">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. <span class="s8">Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi.</span><span class="SE">Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span><span class="span1"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span><span class="span2"><br></br>Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span> <span class="span3"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span></p></div>
+      <div class="map2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9360.667303431694!2d151.01754078541313!3d-33.95409744505719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bee80170a93d%3A0x508110eec7ed59aa!2s41%20McGirr%20St%2C%20Padstow%20NSW%202211!5e0!3m2!1sen!2sau!4v1650953092196!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
     <section class="two">
-      <p class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+      <div class="imgrow">
+        <h1>Our Vision</h1>
+        <p>A community centred on children / young people, families and employees who collaborate to deliver high quality early education and care programs that enable everyone to thrive.</p>
+      </div>
+      <div class="imgrow2">
+        <h1>Our Mission</h1>
+        <p>To be a responsive, innovative and leading provider of quality early education and care, creating passion for learning, engagement and fun in our community.</p>
+      </div>
     </section>
     <section class="three">
-        <h1>Extra 1</h1>
         <section class="footer">
           <div class="social">
             <a href="#"<i class ="fab fa-facebook-f"></i></a>
@@ -346,19 +699,19 @@
           </div>
           <ul class="list">
             <li>
-              <a href="#">Home</a>
+              <a href="HomePage.html">Home</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="Aboutus.html">About</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a href="Ourservices.html">Services</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="Contactus.html">Contact</a>
             </li>
             <li>
-              <a href="MultiStepForm.html">Applications</a>
+              <a href="Applications.html">Applications</a>
             </li>
           </ul>
           <p class="copyright">

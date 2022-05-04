@@ -3,14 +3,21 @@
 <head>
     <title>Our Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width" name="viewport">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style type="text/css">
+
         body {
           margin: 0;
           padding: 0;
           font-family: Biko, sans-serif;
+          line-height: normal;
+        }
+        .three p {
+          color: #fcc64a;
+          font-size: 20px;
+          text-align: center;
         }
         .wrapper {
           width: 100%;
@@ -29,31 +36,182 @@
           justify-content: center;
           scroll-snap-align: start;
         }
-
-        .one{
-          background-color: black;
-        }
         h1 {
           font-size: 8vw;
           line-height: 150px;
-          color: #b7923a;
+          color: #fcc64a;
           margin:  0;
+          display: block;
+          font-weight: bold;
+          font-size: 90px;
         }
-        h2 {
-          font-size
+          .one {
+            background-color: white;
+            position: relative;
+            display: flex;
+            flex-flow: column wrap;
+            overflow: hidden;
+            -webkit-box-sizing: content-box;
+          }
+          .one .heading {
+            position: relative;
+            top: 0;
+            height: 30vh;
+            width: 100%;
+            background: url('img1.jpg');
+            background-size: cover;
+          }
+          .one .subheading {
+            position: relative;
+            top: 0;
+            height: 70vh;
+            width: 100%;
+            background-color: #fcc64a;
+            overflow: hidden;
+            text-align: center;
+          }
+          .one #white2 h1{
+            color: #fcc64a;
+            font-size: 90px;
+            position: relative;
+            bottom: 52.5vh;
+            left: 5vw;
+            padding-top: 67vh;
+          }
+          .one #orange p{
+            color: white;
+            font-size: inherit;
+            position: absolute;
+            width: 45vw;
+            font-size: 20px;
+            left: 50vw;
+            text-align: justify;
+            padding-top: 2vh;
+            line-height: 1.15;
+          }
+          .one button{
+            width:141.05px;
+            margin: 0 auto;
+            text-align:center;
+            top: 80%;
+            /*left: 19.5%;*/
+            position: absolute;
+            display: inline-block;
+            outline: none;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 14px 24px;
+            border: none;
+            transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+            background: #FCC64A;
+            filter: brightness(95%);
+            color: #fff;
+            z-index: 1;
+            font-family: Biko, sans-serif;
+            -webkit-box-sizing: border-box;
+          }
+          .one button:hover{
+            filter: brightness(110%);
+          }
+          @media (max-width:1633px){
+            .span4 {
+              visibility:hidden;
+            }
+          }
+          @media (max-width:1180px){
+            .span3 {
+              visibility:hidden;
+            }
+          }
+          @media (max-width:967px){
+            .span2 {
+              visibility:hidden;
+            }
+          }
+          @media (max-width:670px){
+            .span1 {
+              visibility:hidden;
+            }
+          }
+          @media(max-width:600px) {
+            .one #orange p{
+              width: 90vw;
+              font-size: 20px;
+              left: 4vw;
+              margin: auto;
+            }
+            .span1{
+              visibility: visible;
+            }
+            .one #white2 h1{
+              text-align: center;
+              bottom: 52.5vh;
+              font-size: 48px;
+              left: 0vw;
+            }
+            .heading{
+              height: 30vh;
+            }
+            .subheading{
+              height: 70vh;
+            }
+            .one button{
+              width:141.05px;
+              margin:0 auto;
+              text-align:center;
+              top: 69%;
+            }
         }
-        .subheading {
-          color: #b7923a;
-          font-size: 24px;
+        @media (max-width:469px){
+          .span1 {
+            visibility:hidden;
+          }
         }
-        .two {
-          background-color: #A83C56;
+        @media(max-height:800px)
+        {
+          .span3 {
+            visibility:hidden;
+          }
+          .s8{
+            visibility: hidden;
+          }
+        }
+        @media(max-height:740px)
+        {
+          .SE{
+            visibility: hidden;
+          }
+          .span1 {
+            visibility:hidden;
+          }
+          .span2 {
+            visibility:hidden;
+          }
+          .span3 {
+            visibility:hidden;
+          }
+        }
+        @media (min-width:601px) {
+          .one button{
+            left: 72%;
+            transform: translateX(-50%);
+          }
         }
         .three {
-          background-color: black;
+          background-color: #A83C56;
           height: 100vh;
           flex-direction: column;
           flex:1;
+          overflow: hidden;
+        }
+        .three .text p{
+          width: 90%;
+          margin-left: 2.5%;
+          margin-right: 5%;
+          margin-top: -2.5vh;
         }
         .three .footer {
           padding: 5vh;
@@ -64,6 +222,7 @@
           margin-top: auto;
           display: inline-block;
         }
+
         .footer .social{
           text-align: center;
           padding-bottom: 25px;
@@ -291,7 +450,7 @@
               perspective: 250px;
               position: relative;
               display: inline-block;
-              top: 20vh;
+              top: 0vh;
             }
             .carousel .carousel-item {
               width: 450px;
@@ -332,6 +491,125 @@
                   perspective: 1200px;
               }
             }
+            .three h1{
+              text-align: center;
+            }
+            @media(max-width:600px)
+            {
+            .three h1{
+             font-size: 48px;
+             text-align: center;
+           }
+            .three .text p{
+             width: 90vw;
+             font-size: 20px;
+             top: -10vh;
+           }
+         }
+            .animatednum {
+              background-color: #fcc64a;
+              position: absolute;
+              width: 40vw;
+              height: 55vh;
+              left: 5vw;
+              top: 35vh;
+              overflow: hidden;
+            }
+            .small-container{
+              position: relative;
+              width: 100%;
+              height: 11.27vh;
+              background-color: #fcc64a;
+              z-index: 1;
+              display: inline-block;
+              font-size: 60px;
+              text-align: center;
+              margin-bottom: 4px;
+              padding-top: 5vh;
+              font-weight: bold;
+              color: white;
+              -webkit-box-sizing: content-box;
+            }
+            .line {
+              height: 3px;
+              position: relative;
+              width: 100%;
+              background-color: white;
+            }
+            .small-container p{
+              font-size: 14px;
+              font-weight: bold;
+              width: 39vw;
+              top: 10.5vh;
+              position: absolute;
+              line-height: normal;
+            }
+            @media(max-width:600px)
+            {
+              .animatednum {
+                top: 77vh;
+                height: 20vh;
+                width: 100%;
+                left: 2vw;
+                margin: auto;
+              }
+              .small-container{
+                display: flex;
+                width: 25vw;
+                height: 20vh;
+                float: left;
+                padding-left: 6vw;
+                font-size: 45px;
+              }
+              .line {
+                float: left;
+                width: 3px;
+                position: relative;
+                height: 100%;
+                background-color: white;
+              }
+              #last {
+                display: none;
+                float: none;
+              }
+              .small-container p{
+                width: 18vw;
+                font-size: 12px;
+                top: 11vh;
+              }
+            }
+            @property --num {
+              syntax: '<integer>';
+              inherits: false;
+              initial-value: 0;
+            }
+
+            .small-container::before {
+              counter-increment: my-counter var(--num);
+              content: counter(my-counter) "+";
+              animation: count2 10s ease-in-out forwards;
+            }
+            #one::before {
+              animation: count1 10s ease-in-out forwards;
+            }
+             #two::before {
+              animation: count2 10s ease-in-out forwards;
+             }
+             #three::before {
+               animation: count3 10s ease-in-out forwards;
+              }
+            @keyframes count1 {
+              to { --num: 50; }
+            }
+
+            @keyframes count2 {
+              to { --num: 15; }
+            }
+            @keyframes count3 {
+              to { --num: 150; }
+            }
+          }
+
 
       </style>
 </head>
@@ -376,14 +654,26 @@
     <script src="LoginScript.js">
     </script>
     <section class="one">
-      <div class="content">
-        <h1>About us</h1>
-        <p class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+      <div class="heading" id="white2">
+        <h1>Our services:</h1>
       </div>
+      <div class="subheading" id="orange">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. <span class="SE">Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span><span class="span1"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span><span class="span2"><br></br>Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span><span class="span3"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span><span class="span4"><br></br>Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis.</span></p>
+        </div>
+      <div class="animatednum">
+        <div class="small-container" id="one"><p>Classes</p></div>
+        <div class="line"></div>
+        <div class="small-container" id="two"><p>Staff</p></div>
+        <div class="line"></div>
+        <div class="small-container" id="three"><p>Graduates</p></div>
+        <div class="line" id="last"></div>
+  </div>
     </section>
     <section class="three">
+      <div class="text">
       <h1>Testimonials</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero. Nam tincidunt nibh a tellus fermentum commodo. Aenean fringilla eros vel nibh feugiat fringilla. Fusce ac rhoncus lectus. Nam diam ante, varius a euismod at, viverra a nisl. Cras nec augue felis.</p>
+      <p>Don't just trust our word, here are some reviews from our very happy customers</p>
+    </div>
       <div class="carousel">
           <a class="carousel-item" href="#">
               <div class="testi">
@@ -451,7 +741,6 @@
   	}
     });
   </script>
-
         <section class="footer">
           <div class="social">
             <a href="#"<i class ="fab fa-facebook-f"></i></a>
@@ -461,19 +750,19 @@
           </div>
           <ul class="list">
             <li>
-              <a href="#">Home</a>
+              <a href="HomePage.html">Home</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="Aboutus.html">About</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a href="Ourservices.html">Services</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="Contactus.html">Contact</a>
             </li>
             <li>
-              <a href="MultiStepForm.html">Applications</a>
+              <a href="Applications.html">Applications</a>
             </li>
           </ul>
           <p class="copyright">

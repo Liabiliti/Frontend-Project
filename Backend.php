@@ -75,8 +75,8 @@
         margin-top:10px;
         border:none;
         outline:none;
-        font-size: 0.825em;
-        color: #aaa;
+        font-size: 15px;
+        color: black;
         font-family: Biko, sans-serif;
 
     }
@@ -87,6 +87,9 @@
     select::placeholder{
         opacity:0;
 
+    }
+    option {
+      color: black;
     }
     span{
         position:absolute;

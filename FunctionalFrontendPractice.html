@@ -4,134 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <title>Our Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #0a69ed;
-    }
-    .carousel{
-      height: 600px;
-      perspective: 250px;
-      position: relative;
-      display: inline-block;
 
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
     }
-    .carousel .carousel-item {
-      width: 450px;
-      background: #fff;
-      padding: 50px;
-      height: 400px;
-      text-align: center;
-      border-radius: 15px;
+    body{
+        min-height:100vh;
+        display:grid;
+        place-content:center;
+        font-family:sans-serif;
+        color:#6b6b6b;
     }
-    .img-area {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 50%;
-      border: inset 8px deepskyblue;
-      }
-      .img-area img{
-            width: 100%;
-      }
-    .testi p {
-      color: #262626;
-      font-size: 18px;
-      line-height: 1.9;
+    form{
+        width:90vw;
+        max-width:768px;
+        border:1px solid #ddd;
+        padding:3vw;
+        display:flex;
+        flex-direction:column;
+        border-radius:5px;
     }
-      .testi h4 {
-        font-size: 20px;
-        margin: 0;
-        color: #000;
+
+    label{
+        margin-bottom:15px;
+        position:relative;
+        border-bottom:1px solid #ddd;
     }
-      .testi h5 {
-        font-size: 14px;
-        letter-spacing: 5px;
-        margin: 7px 0;
+    input{
+        width:100%;
+        padding:10px 0px;
+        margin-top:20px;
+        border:none;
+        outline:none;
     }
-    @media(max-width:600px){
-      .carousel{
-          perspective: 1200px;
-      }
+    input::placeholder{
+        opacity:0;
     }
+    span{
+        position:absolute;
+        top:0;
+        left:0;
+        transform:translateY(30px);
+        font-size:0.825em;
+        transition-duration:300ms;
+    }
+    button{
+        padding:15px 0px;
+        margin-top:20px;
+        background:purple;
+        color:#fff;
+        border:1px solid purple;
+        cursor:pointer;
+        border-radius:3px;
+    }
+
+    label:focus-within > span,
+    input:not(:placeholder-shown) + span{
+        color:purple;
+        transform:translateY(0px);
+    }
+
     </style>
 </head>
 <body>
-    <div class="carousel">
-        <a class="carousel-item" href="#">
-            <div class="testi">
-                <div class="img-area">
-                    <img src="IronMan.png">
-                </div>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
-                <h4>Tony Stark</h4>
-                <h5></h5>
-            </div>
-        </a>
-        <a class="carousel-item" href="#">
-            <div class="testi">
-                <div class="img-area">
-                    <img src="person3.jpg">
-                </div>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
-                <h4>Natalie Jones</h4>
-                <h5>Web Designer</h5>
-            </div>
-        </a>
-        <a class="carousel-item" href="#">
-            <div class="testi">
-                <div class="img-area">
-                    <img src="person1.jpg">
-                </div>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
-                <h4>Steve Johns</h4>
-                <h5>Web Designer</h5>
-            </div>
-        </a>
-        <a class="carousel-item" href="#">
-            <div class="testi">
-                <div class="img-area">
-                    <img src="person2.jpg">
-                </div>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
-                <h4>Carol Danvers</h4>
-                <h5>Web Designer</h5>
-            </div>
-        </a>
-        <a class="carousel-item" href="#">
-            <div class="testi">
-                <div class="img-area">
-                    <img src="JonDoe.jpeg">
-                </div>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus veritatis repellendus delectus, est, alias recusandae."</p>
-                <h4>Jon Doe</h4>
-                <h5>Web Designer</h5>
-            </div>
-        </a>
-
-   </div>
-
-
-
-
-    <script
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $('.carousel').carousel({
-			padding: 200
-	});
-	autoplay();
-	function autoplay() {
-		$('.carousel').carousel('next');
-		setTimeout(autoplay, 4500);
-	}
-  });
-</script>
+  <div class="register">
+      <form>
+          <label for="name">
+              <input type="text" id="name" placeholder="Name">
+              <span>Name</span>
+          </label>
+          <label for="email">
+              <input type="email" id="email" placeholder="Email">
+              <span>Email</span>
+          </label>
+          <label for="phone">
+              <input type="text" id="phone" placeholder="Phone">
+              <span>Phone</span>
+          </label>
+          <button type="button">Register</button>
+      </form>
+  </div>
 </body>
 </html>

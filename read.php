@@ -2,10 +2,17 @@
   include 'connection.php';
   $sql = "SELECT * FROM Allergy";
   $result = $conn->query($sql);
+  echo "<tr>";
+  echo "<th>Allergy Type</th>";
+  echo "<th>Allergy Type</th>";
+  echo "<th>Allergy Type</th>";
+  echo "<th>Allergy Type</th>";
+  echo "</tr>";
   while($row = $result->fetch_assoc()) {
     if(isset($_GET["AllergyID"])){
     if ($row['AllergyID'] == $_GET['AllergyID']) {
     echo '<form class="form-inline m-2" action="update.php" method="POST">';
+    echo '<th>Allergy Type</th><th>Allergy Type</th><th>Allergy Type</th><th>Allergy Type</th>';
     echo '<td><input type="text" class = "form-control" name="AllergyType" value="'.$row['AllergyType'].'"></td>';
     echo '<td><input type="text" class = "form-control" name="AllergyName" value="'.$row['AllergyName'].'"></td>';
     echo '<td><input type="text" class = "form-control" name="AllergySymptoms" value="'.$row['AllergySymptoms'].'"></td>';

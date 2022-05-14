@@ -58,7 +58,11 @@
         padding: 1.25rem;
         background: none;
       }
-      #MedicineType.form__input{
+      #ChildID.form__input{
+        padding: 0rem 1rem;
+
+      }
+      #MedicineID.form__input{
         padding: 0rem 1rem;
 
       }
@@ -205,7 +209,7 @@
     }
   </style>
 </head>
-
+<?php include 'initializepage.php'; ?>
 <body>
   <form action="create.php?data=" class="form">
     <h1 class="form__title">Medicine and Child</h1>
@@ -213,25 +217,27 @@
 
   <div class="form__group">
     <select class="form__input" id="ChildID" name="ChildID" placeholder=" " autocomplete="off">
-      <option>Drug Medicine</option>
-      <option>Food Medicine</option>
-      <option>Insect Medicine</option>
-      <option>Latex Medicine</option>
-      <option>Mold Medicine</option>
-      <option>Pet Medicine</option>
-      <option>Pollen Medicine</option>
+      <?php
+      include 'connection.php';
+      $sql = "SELECT ChildID FROM `Child`";
+      $result = $conn->query($sql);
+      while($row = $result->fetch_assoc()) {
+        echo "<option value='".$row['ChildID']."'>".$row['ChildID']."</option>";
+      }
+      ?>
     </select>
     <label for="ChildID" class="form__label">Child</label>
 </div>
 <div class="form__group">
   <select class="form__input" id="MedicineID" name="MedicineID" placeholder=" " autocomplete="off">
-    <option>Drug Medicine</option>
-    <option>Food Medicine</option>
-    <option>Insect Medicine</option>
-    <option>Latex Medicine</option>
-    <option>Mold Medicine</option>
-    <option>Pet Medicine</option>
-    <option>Pollen Medicine</option>
+    <?php
+    include 'connection.php';
+    $sql = "SELECT MedicineID FROM `Medicine`";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+      echo "<option value='".$row['MedicineID']."'>".$row['MedicineID']."</option>";
+    }
+    ?>
   </select>
   <label for="MedicineID" class="form__label">Medicine</label>
 </div>
@@ -249,13 +255,14 @@
       <label for="Search" id="Search" class="form__label">Keyword</label>
       <div class=SearchCategory>
       <select class="form__input"  placeholder=" " autocomplete="off">
-        <option>Drug Medicine</option>
-        <option>Food Medicine</option>
-        <option>Insect Medicine</option>
-        <option>Latex Medicine</option>
-        <option>Mold Medicine</option>
-        <option>Pet Medicine</option>
-        <option>Pollen Medicine</option>
+        <?php
+        $CRUDArray = $_SESSION['CRUDdata'];
+
+        for ($i = 2; $i < count($CRUDArray); $i++){
+
+        echo "<option value='".$CRUDArray[$i]."'>".$CRUDArray[$i]."</option>";
+        }
+        ?>
       </select>
       <label for="SearchCategory" class="form__label">Category</label>
     </div>

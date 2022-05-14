@@ -205,7 +205,7 @@
     }
   </style>
 </head>
-
+<?php include 'initializepage.php'; ?>
 <body>
   <form action="create.php?data=" class="form">
     <h1 class="form__title">Doctor</h1>
@@ -244,17 +244,18 @@
       <label for="Search" id="Search" class="form__label">Keyword</label>
       <div class=SearchCategory>
       <select class="form__input"  placeholder=" " autocomplete="off">
-        <option>Drug Allergy</option>
-        <option>Food Allergy</option>
-        <option>Insect Allergy</option>
-        <option>Latex Allergy</option>
-        <option>Mold Allergy</option>
-        <option>Pet Allergy</option>
-        <option>Pollen Allergy</option>
+        <?php
+        $CRUDArray = $_SESSION['CRUDdata'];
+
+        for ($i = 2; $i < count($CRUDArray); $i++){
+
+        echo "<option value='".$CRUDArray[$i]."'>".$CRUDArray[$i]."</option>";
+        }
+        ?>
       </select>
       <label for="SearchCategory" class="form__label">Category</label>
     </div>
-      <button type="submit" class="form__button">Search</button>
+      <button type="submit" class="form__button">Search</button>  
   </div>
     <div class="line"></div>
       <div class=table-container>

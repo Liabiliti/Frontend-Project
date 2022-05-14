@@ -58,7 +58,11 @@
         padding: 1.25rem;
         background: none;
       }
-      #AllergyType.form__input{
+      #AllergyID.form__input{
+        padding: 0rem 1rem;
+
+      }
+      #ChildID.form__input{
         padding: 0rem 1rem;
 
       }
@@ -205,7 +209,7 @@
     }
   </style>
 </head>
-
+<?php include 'initializepage.php'; ?>
 <body>
   <form action="create.php?data=" class="form">
     <h1 class="form__title">Allergy and Child</h1>
@@ -213,25 +217,27 @@
 
   <div class="form__group">
     <select class="form__input" id="ChildID" name="ChildID" placeholder=" " autocomplete="off">
-      <option>Drug Allergy</option>
-      <option>Food Allergy</option>
-      <option>Insect Allergy</option>
-      <option>Latex Allergy</option>
-      <option>Mold Allergy</option>
-      <option>Pet Allergy</option>
-      <option>Pollen Allergy</option>
+      <?php
+      include 'connection.php';
+      $sql = "SELECT ChildID FROM `Child`";
+      $result = $conn->query($sql);
+      while($row = $result->fetch_assoc()) {
+        echo "<option value='".$row['ChildID']."'>".$row['ChildID']."</option>";
+      }
+      ?>
     </select>
     <label for="ChildID" class="form__label">Child</label>
 </div>
 <div class="form__group">
   <select class="form__input" id="AllergyID" name="AllergyID" placeholder=" " autocomplete="off">
-    <option>Drug Allergy</option>
-    <option>Food Allergy</option>
-    <option>Insect Allergy</option>
-    <option>Latex Allergy</option>
-    <option>Mold Allergy</option>
-    <option>Pet Allergy</option>
-    <option>Pollen Allergy</option>
+    <?php
+    include 'connection.php';
+    $sql = "SELECT AllergyID FROM `Allergy`";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+      echo "<option value='".$row['AllergyID']."'>".$row['AllergyID']."</option>";
+    }
+    ?>
   </select>
   <label for="AllergyID" class="form__label">Allergy</label>
 </div>
@@ -258,13 +264,14 @@
       <label for="Search" id="Search" class="form__label">Keyword</label>
       <div class=SearchCategory>
       <select class="form__input"  placeholder=" " autocomplete="off">
-        <option>Drug Allergy</option>
-        <option>Food Allergy</option>
-        <option>Insect Allergy</option>
-        <option>Latex Allergy</option>
-        <option>Mold Allergy</option>
-        <option>Pet Allergy</option>
-        <option>Pollen Allergy</option>
+        <?php
+        $CRUDArray = $_SESSION['CRUDdata'];
+
+        for ($i = 2; $i < count($CRUDArray); $i++){
+
+        echo "<option value='".$CRUDArray[$i]."'>".$CRUDArray[$i]."</option>";
+        }
+        ?>
       </select>
       <label for="SearchCategory" class="form__label">Category</label>
     </div>

@@ -1,10 +1,14 @@
-
 <?php
 
   include 'connection.php';
+
+
+  $pagename = basename($_SERVER['PHP_SELF']);
+  $search = $_GET['Search'];
+  $searchCategory = $_GET['SearchCategory'];
   $infoArray = $_SESSION['CRUDdata'];
   if (count($infoArray) == 4){
-  $sql = "SELECT * FROM $infoArray[0]";
+  $sql = "SELECT $SearchCategory FROM $infoArray[0] WHERE $SearchCategory = $Search";
   $result = $conn->query($sql);
   echo "<tr>";
   echo "<th style='font-size: 15px!important; font-family: Biko, sans-serif!important;'>$infoArray[2]</th>";
@@ -33,7 +37,7 @@
     $conn->close();
   }
   else if (count($infoArray) == 5){
-  $sql = "SELECT * FROM $infoArray[0]";
+  $sql = "SELECT $SearchCategory FROM $infoArray[0] WHERE $SearchCategory = $Search";
   $result = $conn->query($sql);
   echo "<tr>";
   echo "<th style='font-size: 15px!important; font-family: Biko, sans-serif!important;'>$infoArray[2]</th>";
@@ -65,7 +69,7 @@
     $conn->close();
 }
   else if (count($infoArray) == 6){
-  $sql = "SELECT * FROM $infoArray[0]";
+  $sql = "SELECT $SearchCategory FROM $infoArray[0] WHERE $SearchCategory = $Search";
   $result = $conn->query($sql);
   echo "<tr>";
   echo "<th style='font-size: 15px!important; font-family: Biko, sans-serif!important;'>$infoArray[2]</th>";
@@ -100,7 +104,7 @@
     $conn->close();
 }
 else if (count($infoArray) == 7){
-$sql = "SELECT * FROM $infoArray[0]";
+$sql = "SELECT $SearchCategory FROM $infoArray[0] WHERE $SearchCategory = $Search";
 $result = $conn->query($sql);
 echo "<tr>";
 echo "<th style='font-size: 15px!important; font-family: Biko, sans-serif!important;'>$infoArray[2]</th>";
@@ -138,7 +142,7 @@ while($row = $result->fetch_assoc()) {
   $conn->close();
 }
 else if (count($infoArray) == 8){
-  $sql = "SELECT * FROM $infoArray[0]";
+  $sql = "SELECT $SearchCategory FROM $infoArray[0] WHERE $SearchCategory = $Search";
   $result = $conn->query($sql);
   echo "<tr>";
   echo "<th style='font-size: 15px!important; font-family: Biko, sans-serif!important;'>$infoArray[2]</th>";
@@ -179,7 +183,7 @@ else if (count($infoArray) == 8){
   $conn->close();
 }
   else if (count($infoArray) == 9){
-    $sql = "SELECT * FROM $infoArray[0]";
+    $sql = "SELECT $SearchCategory FROM $infoArray[0] WHERE $SearchCategory = $Search";
     $result = $conn->query($sql);
     echo "<tr>";
     echo "<th style='font-size: 15px!important; font-family: Biko, sans-serif!important;'>$infoArray[2]</th>";

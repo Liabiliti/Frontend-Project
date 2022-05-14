@@ -58,9 +58,11 @@
         padding: 1.25rem;
         background: none;
       }
-      #MedicineType.form__input{
+      #GuardianID.form__input{
         padding: 0rem 1rem;
-
+      }
+      #ChildID.form__input{
+        padding: 0rem 1rem;
       }
 
       .form__input:hover{
@@ -205,32 +207,34 @@
     }
   </style>
 </head>
-
+<?php include 'initializepage.php'; ?>
 <body>
   <form action="create.php?data=" class="form">
     <h1 class="form__title">Guardian and Child</h1>
     <p class="form__description">Create, read, update and delete guardian and child information</p>
     <div class="form__group">
       <select class="form__input" id="GuardianID" name="GuardianID" placeholder=" " autocomplete="off">
-        <option>Drug Medicine</option>
-        <option>Food Medicine</option>
-        <option>Insect Medicine</option>
-        <option>Latex Medicine</option>
-        <option>Mold Medicine</option>
-        <option>Pet Medicine</option>
-        <option>Pollen Medicine</option>
+        <?php
+        include 'connection.php';
+        $sql = "SELECT GuardianID FROM `Guardian`";
+        $result = $conn->query($sql);
+        while($row = $result->fetch_assoc()) {
+          echo "<option value='".$row['GuardianID']."'>".$row['GuardianID']."</option>";
+        }
+        ?>
       </select>
       <label for="DoctorID" class="form__label">Guardian</label>
   </div>
   <div class="form__group">
     <select class="form__input" id="ChildID" name="ChildID" placeholder=" " autocomplete="off">
-      <option>Drug Medicine</option>
-      <option>Food Medicine</option>
-      <option>Insect Medicine</option>
-      <option>Latex Medicine</option>
-      <option>Mold Medicine</option>
-      <option>Pet Medicine</option>
-      <option>Pollen Medicine</option>
+      <?php
+      include 'connection.php';
+      $sql = "SELECT ChildID FROM `Child`";
+      $result = $conn->query($sql);
+      while($row = $result->fetch_assoc()) {
+        echo "<option value='".$row['ChildID']."'>".$row['ChildID']."</option>";
+      }
+      ?>
     </select>
     <label for="ChildID" class="form__label">Child</label>
 </div>
@@ -240,17 +244,18 @@
   </form>-->
   <div id="Search" class="TableContainer">
     <div class="form__group">
-      <input type="text" id="Search"  class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="Search" name="Search"  class="form__input" placeholder=" " autocomplete="off">
       <label for="Search" id="Search" class="form__label">Keyword</label>
       <div class=SearchCategory>
-      <select class="form__input"  placeholder=" " autocomplete="off">
-        <option>Drug Medicine</option>
-        <option>Food Medicine</option>
-        <option>Insect Medicine</option>
-        <option>Latex Medicine</option>
-        <option>Mold Medicine</option>
-        <option>Pet Medicine</option>
-        <option>Pollen Medicine</option>
+      <select class="form__input" name="SearchCategory" placeholder=" " autocomplete="off">
+        <?php
+        $CRUDArray = $_SESSION['CRUDdata'];
+
+        for ($i = 2; $i < count($CRUDArray); $i++){
+
+        echo "<option value='".$CRUDArray[$i]."'>".$CRUDArray[$i]."</option>";
+        }
+        ?>
       </select>
       <label for="SearchCategory" class="form__label">Category</label>
     </div>

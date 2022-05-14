@@ -58,7 +58,23 @@
         padding: 1.25rem;
         background: none;
       }
-      #MedicineType.form__input{
+      #StaffID.form__input{
+        padding: 0rem 1rem;
+
+      }
+      #ChildID1.form__input{
+        padding: 0rem 1rem;
+
+      }
+      #ChildID2.form__input{
+        padding: 0rem 1rem;
+
+      }
+      #ChildID3.form__input{
+        padding: 0rem 1rem;
+
+      }
+      #ChildID4.form__input{
         padding: 0rem 1rem;
 
       }
@@ -205,68 +221,73 @@
     }
   </style>
 </head>
-
+<?php include 'initializepage.php'; ?>
 <body>
   <form action="create.php?data=" class="form">
     <h1 class="form__title">Staff and Child</h1>
     <p class="form__description">Create, read, update and delete staff and child information</p>
     <div class="form__group">
       <select class="form__input" id="StaffID" name="StaffID" placeholder=" " autocomplete="off">
-        <option>Drug Medicine</option>
-        <option>Food Medicine</option>
-        <option>Insect Medicine</option>
-        <option>Latex Medicine</option>
-        <option>Mold Medicine</option>
-        <option>Pet Medicine</option>
-        <option>Pollen Medicine</option>
+        <?php
+        include 'connection.php';
+        $sql = "SELECT StaffID FROM `Staff`";
+        $result = $conn->query($sql);
+        while($row = $result->fetch_assoc()) {
+          echo "<option value='".$row['StaffID']."'>".$row['StaffID']."</option>";
+        }
+        ?>
       </select>
       <label for="DoctorID" class="form__label">Staff</label>
   </div>
   <div class="form__group">
     <select class="form__input" id="ChildID1" name="ChildID1" placeholder=" " autocomplete="off">
-      <option>Drug Medicine</option>
-      <option>Food Medicine</option>
-      <option>Insect Medicine</option>
-      <option>Latex Medicine</option>
-      <option>Mold Medicine</option>
-      <option>Pet Medicine</option>
-      <option>Pollen Medicine</option>
+      <?php
+      include 'connection.php';
+      $sql = "SELECT ChildID FROM `Child`";
+      $result = $conn->query($sql);
+      while($row = $result->fetch_assoc()) {
+        echo "<option value='".$row['ChildID']."'>".$row['ChildID']."</option>";
+      }
+      ?>
     </select>
     <label for="ChildID1" class="form__label">Child 1</label>
 </div>
 <div class="form__group">
   <select class="form__input" id="ChildID2" name="ChildID2" placeholder=" " autocomplete="off">
-    <option>Drug Medicine</option>
-    <option>Food Medicine</option>
-    <option>Insect Medicine</option>
-    <option>Latex Medicine</option>
-    <option>Mold Medicine</option>
-    <option>Pet Medicine</option>
-    <option>Pollen Medicine</option>
+    <?php
+    include 'connection.php';
+    $sql = "SELECT ChildID FROM `Child`";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+      echo "<option value='".$row['ChildID']."'>".$row['ChildID']."</option>";
+    }
+    ?>
   </select>
   <label for="ChildID2" class="form__label">Child 2</label>
 </div>
 <div class="form__group">
   <select class="form__input" id="ChildID3" name="ChildID3" placeholder=" " autocomplete="off">
-    <option>Drug Medicine</option>
-    <option>Food Medicine</option>
-    <option>Insect Medicine</option>
-    <option>Latex Medicine</option>
-    <option>Mold Medicine</option>
-    <option>Pet Medicine</option>
-    <option>Pollen Medicine</option>
+    <?php
+    include 'connection.php';
+    $sql = "SELECT ChildID FROM `Child`";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+      echo "<option value='".$row['ChildID']."'>".$row['ChildID']."</option>";
+    }
+    ?>
   </select>
   <label for="ChildID3" class="form__label">Child 3</label>
 </div>
 <div class="form__group">
   <select class="form__input" id="ChildID4" name="ChildID4" placeholder=" " autocomplete="off">
-    <option>Drug Medicine</option>
-    <option>Food Medicine</option>
-    <option>Insect Medicine</option>
-    <option>Latex Medicine</option>
-    <option>Mold Medicine</option>
-    <option>Pet Medicine</option>
-    <option>Pollen Medicine</option>
+    <?php
+    include 'connection.php';
+    $sql = "SELECT ChildID FROM `Child`";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+      echo "<option value='".$row['ChildID']."'>".$row['ChildID']."</option>";
+    }
+    ?>
   </select>
   <label for="ChildID4" class="form__label">Child 4</label>
 </div>
@@ -280,13 +301,14 @@
       <label for="Search" id="Search" class="form__label">Keyword</label>
       <div class=SearchCategory>
       <select class="form__input"  placeholder=" " autocomplete="off">
-        <option>Drug Medicine</option>
-        <option>Food Medicine</option>
-        <option>Insect Medicine</option>
-        <option>Latex Medicine</option>
-        <option>Mold Medicine</option>
-        <option>Pet Medicine</option>
-        <option>Pollen Medicine</option>
+        <?php
+        $CRUDArray = $_SESSION['CRUDdata'];
+
+        for ($i = 2; $i < count($CRUDArray); $i++){
+
+        echo "<option value='".$CRUDArray[$i]."'>".$CRUDArray[$i]."</option>";
+        }
+        ?>
       </select>
       <label for="SearchCategory" class="form__label">Category</label>
     </div>

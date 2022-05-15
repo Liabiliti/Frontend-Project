@@ -182,9 +182,7 @@
       margin-top: 50px;
 
     }
-    .TableContainer form{
-      height: 100%;
-    }
+
     @media (max-width: 1120px){
       body{
         position: relative;
@@ -266,7 +264,7 @@
   </form>-->
   <div id="Search" class="TableContainer">
     <?php $CRUDArray = $_SESSION['CRUDdata'];
-    echo "<form action=".$CRUDArray[0].".php method='POST'>";
+  echo "<form action=".$CRUDArray[0].".php method='POST'>";
     ?>
     <div class="form__group">
       <input type="text" id="Search" name="Search" class="form__input" placeholder=" " autocomplete="off">
@@ -287,10 +285,12 @@
       <button type="submit" class="form__button">Search</button>
   </div>
     <div class="line"></div>
+    </form>
       <div class=table-container>
     <table class="table">
       <tbody>
-        <?php if (isset($_POST['Search']))
+        <?php
+        if (isset($_POST['Search']))
         {
           include 'view.php';
         }
@@ -301,7 +301,7 @@
       </tbody>
     </table>
     </div>
-  </form>
+  <!--</form>-->
     <br></br>
   </div>
 

@@ -182,9 +182,7 @@
       margin-top: 50px;
 
     }
-    .TableContainer form{
-      height: 100%;
-    }
+
     @media (max-width: 1120px){
       body{
         position: relative;
@@ -233,33 +231,16 @@
       <label for="AllergyType" class="form__label">Allergy Type</label>
   </div>
     <div class="form__group">
-      <input type="text" id="AllergyName" name="AllergyName" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="AllergyName" name="AllergyName" class="form__input" placeholder=" " pattern="[a-zA-Z]+" required title="Input does not accept numbers" autocomplete="off">
       <label for="AllergyName" class="form__label">Allergy Name</label>
     </div>
     <div class="form__group">
-      <input type="text" id="AllergySymptoms" name="AllergySymptoms" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="AllergySymptoms" name="AllergySymptoms" class="form__input" placeholder=" " pattern="[a-zA-Z]+" required title="Input does not accept numbers" autocomplete="off">
       <label for="AllergySymptoms" class="form__label">Allergy Symptoms</label>
     </div>
     <div class="form__group">
-      <input type="text" id="AllergyDescription" name="AllergyDescription" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="AllergyDescription" name="AllergyDescription" class="form__input" placeholder=" " pattern="[a-zA-Z]+" required title="Input does not accept numbers" autocomplete="off">
       <label for="AllergyDescription" class="form__label">Allergy Description</label>
-    </div>
-    <div class="form__group">
-      <input type="date" id="AllergySymptoms" class="form__input" placeholder=" " autocomplete="off">
-      <label for="AllergySymptoms" class="form__label">DOB</label>
-    </div>
-    <div class="form__group">
-      <p>Gender</p>
-      <div class="radio">
-    <input type="radio" id="Male" name="ChildGender" value="Male">
-    <label for="Male">Male</label>
-
-    <input type="radio" id="Female" name="ChildGender" value="Female">
-    <label for="Female">Female</label>
-
-    <input type="radio" id="Other" name="ChildGender" value="Other">
-    <label for="Other">Other</label>
-  </div>
     </div>
     <button type="submit" class="form__button">Add</button>
   </form>
@@ -267,7 +248,7 @@
   </form>-->
   <div id="Search" class="TableContainer">
     <?php $CRUDArray = $_SESSION['CRUDdata'];
-    echo "<form action=".$CRUDArray[0].".php method='POST'>";
+  echo "<form action=".$CRUDArray[0].".php method='POST'>";
     ?>
     <div class="form__group">
       <input type="text" id="Search" name="Search" class="form__input" placeholder=" " autocomplete="off">
@@ -288,10 +269,12 @@
       <button type="submit" class="form__button">Search</button>
   </div>
     <div class="line"></div>
+    </form>
       <div class=table-container>
     <table class="table">
       <tbody>
-        <?php if (isset($_POST['Search']))
+        <?php
+        if (isset($_POST['Search']))
         {
           include 'view.php';
         }
@@ -302,7 +285,7 @@
       </tbody>
     </table>
     </div>
-  </form>
+  <!--</form>-->
     <br></br>
   </div>
 

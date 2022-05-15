@@ -217,27 +217,27 @@
     <h1 class="form__title">Child</h1>
     <p class="form__description">Create, read, update and delete child information</p>
     <div class="form__group">
-      <input type="text" id="ChildFirstName" name="ChildFirstName" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="ChildFirstName" name="ChildFirstName" class="form__input" placeholder=" " pattern="^[A-Za-z]+((\s)?((\'|\-|\.)?([A-Za-z])+))*$" required title="Input does not accept numbers or special characters" autocomplete="off">
       <label for="AllergyName" class="form__label">Child First Name</label>
     </div>
     <div class="form__group">
-      <input type="text" id="ChildLastName" name="ChildLastName" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="ChildLastName" name="ChildLastName" class="form__input" placeholder=" " pattern="^[A-Za-z]+((\s)?((\'|\-|\.)?([A-Za-z])+))*$" required title="Input does not accept numbers or special characters" autocomplete="off">
       <label for="AllergySymptoms" class="form__label">Child Surname</label>
     </div>
     <div class="form__group">
-      <input type="date" id="ChildDOB" name="ChildDOB" class="form__input" placeholder=" " autocomplete="off">
+      <input type="date" id="ChildDOB" name="ChildDOB" class="form__input" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required placeholder=" " autocomplete="off">
       <label for="AllergySymptoms" class="form__label">Child DOB</label>
     </div>
     <div class="form__group">
       <p>Child Gender</p>
       <div class="radio">
-    <input type="radio" id="Male" name="ChildGender" value="Male">
+    <input type="radio" id="Male" name="ChildGender" value="M">
     <label for="Male">Male</label>
 
-    <input type="radio" id="Female" name="ChildGender" value="Female">
+    <input type="radio" id="Female" name="ChildGender" value="F">
     <label for="Female">Female</label>
 
-    <input type="radio" id="Other" name="ChildGender" value="Other">
+    <input type="radio" id="Other" name="ChildGender" value="O" checked>
     <label for="Other">Other</label>
   </div>
     </div>
@@ -247,7 +247,7 @@
   </form>-->
   <div id="Search" class="TableContainer">
     <?php $CRUDArray = $_SESSION['CRUDdata'];
-    echo "<form action=".$CRUDArray[0].".php method='POST'>";
+  echo "<form action=".$CRUDArray[0].".php method='POST'>";
     ?>
     <div class="form__group">
       <input type="text" id="Search" name="Search" class="form__input" placeholder=" " autocomplete="off">
@@ -268,10 +268,12 @@
       <button type="submit" class="form__button">Search</button>
   </div>
     <div class="line"></div>
+    </form>
       <div class=table-container>
     <table class="table">
       <tbody>
-        <?php if (isset($_POST['Search']))
+        <?php
+        if (isset($_POST['Search']))
         {
           include 'view.php';
         }
@@ -282,7 +284,7 @@
       </tbody>
     </table>
     </div>
-  </form>
+  <!--</form>-->
     <br></br>
   </div>
 

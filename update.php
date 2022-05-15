@@ -47,7 +47,9 @@ else if(count($CRUDArray) == 9){
   echo $sql;
   $result = $conn->query($sql);
   $conn->close();
+
 }
+
 header("location: $CRUDArray[0].php");
 
 ?>

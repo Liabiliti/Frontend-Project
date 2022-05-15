@@ -14,7 +14,6 @@ $var7 = $_GET[$CRUDArray[8]];
 
 if(count($CRUDArray) == 4){
 $sql = "insert into $CRUDArray[0] ($CRUDArray[2] , $CRUDArray[3]) values ('$var1', '$var2')";
-echo $sql;
 $conn->query($sql);
 $conn->close();
 }

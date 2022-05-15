@@ -26,6 +26,7 @@
       grid-template-columns: 1fr 1fr;
       grid-gap: 10px;
     }
+
     .form{
       width: 800px;
       padding: 2rem;
@@ -129,6 +130,7 @@
       /*margin-top: -30vh;*/
       display: inline-block;
       text-align: justify;
+
     }
     .TableContainer .form__group{
       display: grid;
@@ -175,12 +177,16 @@
       border: 1px solid lightgrey;
       overflow: scroll;
       width: 96%;
-      height: 80%;
+      height: 75%;
       margin: auto;
       border-radius: 1rem;
       margin-top: 50px;
+
     }
-    @media (max-width: 1120px){
+    .TableContainer form{
+      height: 100%;
+    }
+    @media (max-width: 1850px){
       body{
         position: relative;
         display: block;
@@ -201,6 +207,12 @@
         width: 90%;
         height: 60vh;
 
+      }
+      .TableContainer .form__button{
+        height: 44px;
+      }
+      .TableContainer .SearchCategory .form__input{
+          height: 44px;
       }
     }
   </style>
@@ -243,11 +255,14 @@
       <!--<button type="submit" class="btn btn-primary">Add</button>
   </form>-->
   <div id="Search" class="TableContainer">
+    <?php $CRUDArray = $_SESSION['CRUDdata'];
+    echo "<form action=".$CRUDArray[0].".php method='POST'>";
+    ?>
     <div class="form__group">
-      <input type="text" id="Search"  class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="Search" name="Search" class="form__input" placeholder=" " autocomplete="off">
       <label for="Search" id="Search" class="form__label">Keyword</label>
       <div class=SearchCategory>
-      <select class="form__input"  placeholder=" " autocomplete="off">
+      <select class="form__input" name="SearchCategory" placeholder=" " autocomplete="off">
         <?php
         $CRUDArray = $_SESSION['CRUDdata'];
 
@@ -265,15 +280,19 @@
       <div class=table-container>
     <table class="table">
       <tbody>
-        <?php include 'read.php'; ?>
+        <?php if (isset($_POST['Search']))
+        {
+          include 'view.php';
+        }
+        else{
+          include 'read.php';
+        }
+         ?>
       </tbody>
     </table>
     </div>
+  </form>
     <br></br>
-    <!--<script type = "text/javascript" src="CRUDsql.js"></script>
-    <script language="javascript">
-    JsonName();
-  </script>-->
   </div>
 
 

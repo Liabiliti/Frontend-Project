@@ -3,6 +3,7 @@
 
   include 'connection.php';
   $infoArray = $_SESSION['CRUDdata'];
+
   if (count($infoArray) == 4){
   $sql = "SELECT * FROM $infoArray[0]";
   $result = $conn->query($sql);
@@ -222,6 +223,7 @@ else if (count($infoArray) == 8){
     }
     $conn->close();
 }
+
 
 
 ?>

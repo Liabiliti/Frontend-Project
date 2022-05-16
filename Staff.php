@@ -211,41 +211,149 @@
       .TableContainer .SearchCategory .form__input{
           height: 44px;
       }
+      .table-container {
+        height: 60%;
+      }
     }
+    .error {
+      background: #F2DEDE;
+      color: #A94442;
+      padding: 10px;
+      margin: auto;
+      margin-top: 10px;
+      width: 90%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    #menu__toggle {
+        opacity: 0;
+        }
+    #menu__toggle:checked + .menu__btn > span {
+        transform: rotate(45deg);
+        }
+    #menu__toggle:checked + .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0deg);
+        }
+    #menu__toggle:checked + .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+        }
+    #menu__toggle:checked ~ .menu__box {
+        left: 0 !important;
+        }
+    .menu__btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 3;
+        margin: 0;
+        }
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+        }
+  .menu__btn > span::before {
+        content: '';
+        top: -8px;
+        }
+  .menu__btn > span::after {
+        content: '';
+        top: 8px;
+        }
+  .menu__box {
+        display: block;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        background-color: #ECEFF1;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        }
+  .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+        }
+  .menu__item:hover {
+        background-color: #CFD8DC;
+        }
   </style>
 </head>
 <?php include 'initializepage.php'; ?>
 <body>
+  <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="HomePage.html">Home</a></li>
+          <li><a class="menu__item" href="Allergy.php">Allergy Form</a></li>
+          <li><a class="menu__item" href="Child.php">Child Form</a></li>
+          <li><a class="menu__item" href="ChildAllergy.php">Child Allergy Form</a></li>
+          <li><a class="menu__item" href="ChildMedicine.php">Child Medicine Form</a></li>
+          <li><a class="menu__item" href="Doctor.php">Doctor Form</a></li>
+          <li><a class="menu__item" href="DoctorChild.php">Doctor Child Form</a></li>
+          <li><a class="menu__item" href="Guardian.php">Guardian Form</a></li>
+          <li><a class="menu__item" href="GuardianChild.php">Guardian Child Form</a></li>
+          <li><a class="menu__item" href="GuardianPayment.php">Guardian Payment Form</a></li>
+          <li><a class="menu__item" href="Medicine.php">Medicine Form</a></li>
+          <li><a class="menu__item" href="Payment.php">Payment Form</a></li>
+          <li><a class="menu__item" href="Staff.php">Staff Form</a></li>
+          <li><a class="menu__item" href="StaffChild.php">Staff Child Form</a></li>
+        </ul>
+  </div>
   <form action="create.php?data=" class="form">
     <h1 class="form__title">Staff</h1>
     <p class="form__description">Create, read, update and delete staff information</p>
     <div class="form__group">
-      <input type="text" id="StaffFirstName" name="StaffFirstName" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="StaffFirstName" name="StaffFirstName" class="form__input" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" required title="Input does not accept numbers or special characters" placeholder=" " autocomplete="off">
       <label for="StaffFirstName" class="form__label">Staff First Name</label>
     </div>
     <div class="form__group">
-      <input type="text" id="StaffLastName" name="StaffLastName" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="StaffLastName" name="StaffLastName" class="form__input" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" required title="Input does not accept numbers or special characters" placeholder=" " autocomplete="off">
       <label for="StaffLastName" class="form__label">Staff Surname</label>
     </div>
     <div class="form__group">
       <p>Staff Gender</p>
       <div class="radio">
-    <input type="radio" id="Male" name="StaffGender" value="Male">
+    <input type="radio" id="Male" name="StaffGender" value="M">
     <label for="Male">Male</label>
 
-    <input type="radio" id="Female" name="StaffGender" value="Female">
+    <input type="radio" id="Female" name="StaffGender" value="F">
     <label for="Female">Female</label>
 
-    <input type="radio" id="Other" name="StaffGender" value="Other">
+    <input type="radio" id="Other" name="StaffGender" value="O" checked>
     <label for="Other">Other</label>
   </div>
 </div>
     <div class="form__group">
-      <input type="text" id="StaffHomePhone" name="StaffHomePhone" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="StaffHomePhone" name="StaffHomePhone" class="form__input" pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required title="Number does not match Australian format: 02 8986 6544 or +61 2 8986 6544" placeholder=" " autocomplete="off">
       <label for="StaffHomePhone" class="form__label">Staff Home Phone</label>
     </div>
     <div class="form__group">
-      <input type="text" id="StaffWorkPhone" name="StaffWorkPhone" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="StaffWorkPhone" name="StaffWorkPhone" class="form__input" pattern="^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$" required title="Number does not match Australian format: 02 8986 6544 or +61 2 8986 6544" placeholder=" " autocomplete="off">
       <label for="StaffWorkPhone" class="form__label">Staff Work Phone</label>
     </div>
     <div class="form__group">
@@ -254,7 +362,7 @@
     <input type="radio" id="Yes" name="StaffonDuty" value="Yes">
     <label for="Male">Yes</label>
 
-    <input type="radio" id="No" name="StaffonDuty" value="No">
+    <input type="radio" id="No" name="StaffonDuty" value="No" checked>
     <label for="Female">No</label>
     </div>
   </div>
@@ -304,6 +412,10 @@
   <!--</form>-->
     <br></br>
   </div>
+  <?php
+  if (isset($_GET['error'])) { ?>
+    <p class="error"><?php echo $_GET['error']; ?></p>
+  <?php } ?>
 
 
 

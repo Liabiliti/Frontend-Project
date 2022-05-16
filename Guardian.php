@@ -59,7 +59,7 @@
         padding: 1.25rem;
         background: none;
       }
-      #AllergyType.form__input{
+      #GuardianState.form__input{
         padding: 0rem 1rem;
 
       }
@@ -212,40 +212,157 @@
       .TableContainer .SearchCategory .form__input{
           height: 44px;
       }
+      .table-container {
+        height: 60%;
+      }
     }
+    .error {
+      background: #F2DEDE;
+      color: #A94442;
+      padding: 10px;
+      margin: auto;
+      margin-top: 10px;
+      width: 90%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    #menu__toggle {
+        opacity: 0;
+        }
+    #menu__toggle:checked + .menu__btn > span {
+        transform: rotate(45deg);
+        }
+    #menu__toggle:checked + .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0deg);
+        }
+    #menu__toggle:checked + .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+        }
+    #menu__toggle:checked ~ .menu__box {
+        left: 0 !important;
+        }
+    .menu__btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 3;
+        margin: 0;
+        }
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+        }
+  .menu__btn > span::before {
+        content: '';
+        top: -8px;
+        }
+  .menu__btn > span::after {
+        content: '';
+        top: 8px;
+        }
+  .menu__box {
+        display: block;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        background-color: #ECEFF1;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        }
+  .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+        }
+  .menu__item:hover {
+        background-color: #CFD8DC;
+        }
   </style>
 </head>
 <?php include 'initializepage.php'; ?>
 <body>
+  <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="HomePage.html">Home</a></li>
+          <li><a class="menu__item" href="Allergy.php">Allergy Form</a></li>
+          <li><a class="menu__item" href="Child.php">Child Form</a></li>
+          <li><a class="menu__item" href="ChildAllergy.php">Child Allergy Form</a></li>
+          <li><a class="menu__item" href="ChildMedicine.php">Child Medicine Form</a></li>
+          <li><a class="menu__item" href="Doctor.php">Doctor Form</a></li>
+          <li><a class="menu__item" href="DoctorChild.php">Doctor Child Form</a></li>
+          <li><a class="menu__item" href="Guardian.php">Guardian Form</a></li>
+          <li><a class="menu__item" href="GuardianChild.php">Guardian Child Form</a></li>
+          <li><a class="menu__item" href="GuardianPayment.php">Guardian Payment Form</a></li>
+          <li><a class="menu__item" href="Medicine.php">Medicine Form</a></li>
+          <li><a class="menu__item" href="Payment.php">Payment Form</a></li>
+          <li><a class="menu__item" href="Staff.php">Staff Form</a></li>
+          <li><a class="menu__item" href="StaffChild.php">Staff Child Form</a></li>
+        </ul>
+  </div>
   <form action="create.php?data=" class="form">
     <h1 class="form__title">Guardian</h1>
     <p class="form__description">Create, read, update and delete guardian information</p>
     <div class="form__group">
-      <input type="text" id="GuardianFirstName" name="GuardianFirstName" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="GuardianFirstName" name="GuardianFirstName" class="form__input" placeholder=" " pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" required title="Input does not accept numbers, spaces or special characters" autocomplete="off">
       <label for="GuardianFirstName" class="form__label">Guardian First Name</label>
     </div>
     <div class="form__group">
-      <input type="text" id="GuardianLastName" name="GuardianLastName" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="GuardianLastName" name="GuardianLastName" class="form__input" placeholder=" " pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" required title="Input does not accept numbers, spaces or special characters" autocomplete="off">
       <label for="GuardianLastName" class="form__label">Guardian Surname</label>
     </div>
     <div class="form__group">
-      <input type="text" id="GuardianStreetAddress" name="GuardianStreetAddress" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="GuardianStreetAddress" name="GuardianStreetAddress" class="form__input" placeholder=" " required  autocomplete="off">
       <label for="GuardianStreetAddress" class="form__label">Guardian Street Address</label>
     </div>
     <div class="form__group">
-      <input type="text" id="GuardianTown" name="GuardianTown" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="GuardianTown" name="GuardianTown" class="form__input" placeholder=" "  pattern="^[a-zA-Z',.\s-]{1,25}$" required title="Input does not accept special characters or numbers"  autocomplete="off">
       <label for="GuardianTown" class="form__label">Guardian Town</label>
     </div>
     <div class="form__group">
-      <input type="text" id="GuardianState" name="GuardianState" class="form__input" placeholder=" " autocomplete="off">
+      <select class="form__input" id="GuardianState" name="GuardianState" placeholder=" " autocomplete="off">
+        <option>QLD</option>
+        <option>SA</option>
+        <option>VIC</option>
+        <option>NSW</option>
+        <option>TAS</option>
+        <option>WA</option>
+        <option>NT</option>
+        <option>ACT</option>
+      </select>
       <label for="GuardianState" class="form__label">Guardian State</label>
-    </div>
+  </div>
     <div class="form__group">
-      <input type="text" id="GuardianPostcode" name="GuardianPostcode" class="form__input" placeholder=" " autocomplete="off">
+      <input type="number" id="GuardianPostcode" max="9999" min="1000" name="GuardianPostcode" class="form__input" placeholder=" " pattern="^(0[289][0-9]{2})|([1-9][0-9]{3})$" required title="Input does not accept special characters" autocomplete="off">
       <label for="GuardianPostcode" class="form__label">Guardian Postcode</label>
     </div>
     <div class="form__group">
-      <input type="text" id="GuardianPhoneNumber" name="GuardianPhoneNumber" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="GuardianPhoneNumber" name="GuardianPhoneNumber" class="form__input" placeholder=" " pattern="^(\+?\(61\)|\(\+?61\)|\+?61|\(0[1-9]\)|0[1-9])?( ?-?[0-9]){7,9}$" required title="Number does not match Australian format: 02 8986 6544 or +61 2 8986 6544" autocomplete="off">
       <label for="GuardianPhoneNumber" class="form__label">Guardian Phone Number</label>
     </div>
     <button type="submit" class="form__button">Add</button>
@@ -294,7 +411,10 @@
   <!--</form>-->
     <br></br>
   </div>
-
+  <?php
+  if (isset($_GET['error'])) { ?>
+    <p class="error"><?php echo $_GET['error']; ?></p>
+  <?php } ?>
 
 
 </body>

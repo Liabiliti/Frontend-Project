@@ -1,9 +1,12 @@
+<?php include 'connection.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
       <title></title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
       <style type="text/css">
         body {
           margin: 0;
@@ -143,7 +146,7 @@
               left: 50%;
               transform: translate(-50%, -50%) scale(1.15);
               width: 300px;
-              height: 440px;
+              height: 500px;
               background: #f5f5f5;
               z-index: 2;
               opacity: 0;
@@ -433,8 +436,17 @@
               font-size: 13px;
               color: #aaa;
             }
-
+            .error {
+              background: #F2DEDE;
+              color: #A94442;
+              padding: 10px;
+              margin-left: 5px;
+              width: 90%;
+              border-radius: 5px;
+              text-align: center;
+            }
       </style>
+
 </head>
 
 <body>
@@ -460,18 +472,24 @@
           <div class="avatar">
             <img src="https://bit.ly/31pHqJb" alt="">
           </div>
+          <form id="loginform" action="login.php" method="POST">
+            <?php
+            if (isset($_GET['error'])) { ?>
+              <p class="error"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
           <div class="header">Member login</div>
           <div class="element">
             <label for="username">Username</label>
-            <input type="text" id="username">
+            <input type="text" id="username" required name="username">
           </div>
           <div class="element">
             <label for="password">Password</label>
-            <input type="tex"t id="password">
+            <input type="text" id="password" required name="password">
           </div>
           <div class="element">
-            <button>Login</button>
+            <button type="submit" name="submit">Login</button>
           </div>
+        </form>
       </div>
     </div>
     <script src="LoginScript.js">

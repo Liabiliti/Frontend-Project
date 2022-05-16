@@ -59,7 +59,7 @@
         padding: 1.25rem;
         background: none;
       }
-      #AllergyType.form__input{
+      #DoctorState.form__input{
         padding: 0rem 1rem;
 
       }
@@ -183,7 +183,7 @@
       margin-top: 50px;
 
     }
-    
+
 
 
 
@@ -214,36 +214,153 @@
       .TableContainer .SearchCategory .form__input{
           height: 44px;
       }
+      .table-container {
+        height: 60%;
+      }
     }
+    .error {
+      background: #F2DEDE;
+      color: #A94442;
+      padding: 10px;
+      margin: auto;
+      margin-top: 10px;
+      width: 90%;
+      border-radius: 5px;
+      text-align: center;
+    }
+    #menu__toggle {
+        opacity: 0;
+        }
+    #menu__toggle:checked + .menu__btn > span {
+        transform: rotate(45deg);
+        }
+    #menu__toggle:checked + .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0deg);
+        }
+    #menu__toggle:checked + .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+        }
+    #menu__toggle:checked ~ .menu__box {
+        left: 0 !important;
+        }
+    .menu__btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 3;
+        margin: 0;
+        }
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+        }
+  .menu__btn > span::before {
+        content: '';
+        top: -8px;
+        }
+  .menu__btn > span::after {
+        content: '';
+        top: 8px;
+        }
+  .menu__box {
+        display: block;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        background-color: #ECEFF1;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        }
+  .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+        }
+  .menu__item:hover {
+        background-color: #CFD8DC;
+        }
   </style>
 </head>
 <?php include 'initializepage.php'; ?>
 <body>
+  <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="HomePage.html">Home</a></li>
+          <li><a class="menu__item" href="Allergy.php">Allergy Form</a></li>
+          <li><a class="menu__item" href="Child.php">Child Form</a></li>
+          <li><a class="menu__item" href="ChildAllergy.php">Child Allergy Form</a></li>
+          <li><a class="menu__item" href="ChildMedicine.php">Child Medicine Form</a></li>
+          <li><a class="menu__item" href="Doctor.php">Doctor Form</a></li>
+          <li><a class="menu__item" href="DoctorChild.php">Doctor Child Form</a></li>
+          <li><a class="menu__item" href="Guardian.php">Guardian Form</a></li>
+          <li><a class="menu__item" href="GuardianChild.php">Guardian Child Form</a></li>
+          <li><a class="menu__item" href="GuardianPayment.php">Guardian Payment Form</a></li>
+          <li><a class="menu__item" href="Medicine.php">Medicine Form</a></li>
+          <li><a class="menu__item" href="Payment.php">Payment Form</a></li>
+          <li><a class="menu__item" href="Staff.php">Staff Form</a></li>
+          <li><a class="menu__item" href="StaffChild.php">Staff Child Form</a></li>
+        </ul>
+  </div>
   <form action="create.php?data=" class="form">
     <h1 class="form__title">Doctor</h1>
     <p class="form__description">Create, read, update and delete doctor information</p>
     <div class="form__group">
-      <input type="text" id="DoctorLastName" name="DoctorLastName" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="DoctorLastName" name="DoctorLastName" class="form__input" placeholder=" " pattern="^[a-zA-Z\s]*$" required title="Input does not accept numbers or special characters" autocomplete="off">
       <label for="DoctorLastName" class="form__label">Doctor Surname</label>
     </div>
     <div class="form__group">
-      <input type="text" id="DoctorStreetAddress" name="DoctorStreetAddress" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="DoctorStreetAddress" name="DoctorStreetAddress" class="form__input" placeholder=" " required autocomplete="off">
       <label for="DoctorStreetAddress" class="form__label">Doctor Street Address</label>
     </div>
     <div class="form__group">
-      <input type="text" id="DoctorTown" name="DoctorTown" class="form__input" placeholder=" " autocomplete="off">
+      <input type="text" id="DoctorTown" name="DoctorTown" class="form__input" placeholder=" " pattern="^[a-zA-Z',.\s-]{1,25}$" required title="Input does not accept special characters or numbers" autocomplete="off">
       <label for="DoctorTown" class="form__label">Doctor Town</label>
     </div>
     <div class="form__group">
-      <input type="text" id="DoctorState" name="DoctorState" class="form__input" placeholder=" " autocomplete="off">
+      <select class="form__input" id="DoctorState" name="DoctorState" placeholder=" " autocomplete="off">
+        <option>QLD</option>
+        <option>SA</option>
+        <option>VIC</option>
+        <option>NSW</option>
+        <option>TAS</option>
+        <option>WA</option>
+        <option>NT</option>
+        <option>ACT</option>
+      </select>
       <label for="DoctorState" class="form__label">Doctor State</label>
-    </div>
+  </div>
     <div class="form__group">
-      <input type="text" id="DoctorPostcode" name="DoctorPostcode" class="form__input" placeholder=" " autocomplete="off">
+      <input type="number" id="DoctorPostcode" max="9999" min="1000" name="DoctorPostcode" class="form__input" placeholder=" " pattern="^(0[289][0-9]{2})|([1-9][0-9]{3})$" required title="Input does not accept special characters" autocomplete="off">
       <label for="DoctorPostcode" class="form__label">Doctor Postcode</label>
     </div>
     <div class="form__group">
-      <input type="text" id="DoctorPhoneNumber" name="DoctorPhoneNumber" class="form__input" placeholder=" " autocomplete="off">
+      <input type="tel" id="DoctorPhoneNumber" name="DoctorPhoneNumber" class="form__input" placeholder=" " pattern="^(\+?\(61\)|\(\+?61\)|\+?61|\(0[1-9]\)|0[1-9])?( ?-?[0-9]){7,9}$" required title="Number does not match Australian format: 02 8986 6544 or +61 2 8986 6544" autocomplete="off">
       <label for="DoctorPhoneNumber" class="form__label">Doctor Phone Number</label>
     </div>
     <button type="submit" class="form__button">Add</button>
@@ -292,6 +409,10 @@
   <!--</form>-->
     <br></br>
   </div>
+  <?php
+  if (isset($_GET['error'])) { ?>
+    <p class="error"><?php echo $_GET['error']; ?></p>
+  <?php } ?>
 
 
 

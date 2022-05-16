@@ -11,7 +11,7 @@ $var4 = $_POST[$CRUDArray[5]];
 $var5 = $_POST[$CRUDArray[6]];
 $var6 = $_POST[$CRUDArray[7]];
 $var7 = $_POST[$CRUDArray[8]];
-
+try{
 if(count($CRUDArray) == 4){
 $sql = "UPDATE $CRUDArray[0] SET $CRUDArray[2]='$var1', $CRUDArray[3]='$var2' WHERE $CRUDArray[1]=$varID";
 echo $sql;
@@ -51,5 +51,8 @@ else if(count($CRUDArray) == 9){
 }
 
 header("location: $CRUDArray[0].php");
-
+}
+catch (mysqli_sql_exception $e) {
+    header("location: $CRUDArray[0].php?error=Cant update, selected entry does not exist");
+}
 ?>

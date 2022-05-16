@@ -11,10 +11,7 @@ try{
   header("location: $CRUDArray[0].php");
 }
 catch (mysqli_sql_exception $e) {
-
-    header("location: $CRUDArray[0].php");
-    echo "You cannot delete this row, as it is currently within a child table, remove it from the child table and then you will be able to delete it.";
-
+    header("location: $CRUDArray[0].php?error=Cant delete, deleted entry is on a child table");
 }
 
 ?>

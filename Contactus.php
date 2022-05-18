@@ -449,6 +449,7 @@
 </head>
 
 <body>
+  <img alt="Interior of Padstow Child Care Centre">
   <div class="wrapper">
     <div class="hamburger-menu">
       <input id="menu__toggle" type="checkbox" />

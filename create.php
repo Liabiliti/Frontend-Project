@@ -12,6 +12,7 @@ $var5 = $_GET[$CRUDArray[6]];
 $var6 = $_GET[$CRUDArray[7]];
 $var7 = $_GET[$CRUDArray[8]];
 
+
 if($CRUDArray[0] !== "StaffChild"){
 if(count($CRUDArray) == 4){
 $sql = "insert into $CRUDArray[0] ($CRUDArray[2] , $CRUDArray[3]) values ('$var1', '$var2')";
@@ -51,5 +52,13 @@ else if($CRUDArray[0] == "StaffChild"){
     {
       header("location: $CRUDArray[0].php?error1=Cannot use the same Child ID more than once");
     }
-}
+    else {
+        $sql = "insert into $CRUDArray[0] ($CRUDArray[2] , $CRUDArray[3], $CRUDArray[4], $CRUDArray[5], $CRUDArray[6]) values ('$var1', '$var2', '$var3', '$var4', '$var5')";
+        echo $sql;
+        $conn->query($sql);
+        $conn->close();
+        header("location: $CRUDArray[0].php");
+      }
+    }
+
 ?>

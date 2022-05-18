@@ -9,7 +9,7 @@
     $result = $conn->query($sql);
     if ($row = $result->fetch_assoc()) {
       if ($password == $row['Password']){
-        echo $home_url."Allergy.php";
+        header("location:Allergy.php");
       }
       else {
         header("location:Contactus.php?error=Invalid password!");

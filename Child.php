@@ -175,7 +175,7 @@
       border: 1px solid lightgrey;
       overflow: scroll;
       width: 96%;
-      height: 80%;
+      height: 75%;
       margin: auto;
       border-radius: 1rem;
       margin-top: 50px;
@@ -216,7 +216,7 @@
       color: #A94442;
       padding: 10px;
       margin: auto;
-      margin-top: 10px;
+      margin-top: -35px;
       width: 90%;
       border-radius: 5px;
       text-align: center;
@@ -394,11 +394,12 @@
     </div>
   <!--</form>-->
     <br></br>
+    <?php
+    if (isset($_GET['error'])) { ?>
+      <p class="error"><?php echo $_GET['error']; ?></p>
+    <?php } ?>
   </div>
-  <?php
-  if (isset($_GET['error'])) { ?>
-    <p class="error"><?php echo $_GET['error']; ?></p>
-  <?php } ?>
+
 
 
 

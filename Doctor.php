@@ -223,7 +223,7 @@
       color: #A94442;
       padding: 10px;
       margin: auto;
-      margin-top: 10px;
+      margin-top: -35px;
       width: 90%;
       border-radius: 5px;
       text-align: center;
@@ -408,11 +408,12 @@
     </div>
   <!--</form>-->
     <br></br>
+    <?php
+    if (isset($_GET['error'])) { ?>
+      <p class="error"><?php echo $_GET['error']; ?></p>
+    <?php } ?>
   </div>
-  <?php
-  if (isset($_GET['error'])) { ?>
-    <p class="error"><?php echo $_GET['error']; ?></p>
-  <?php } ?>
+
 
 
 

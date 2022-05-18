@@ -337,7 +337,7 @@
         $sql = "SELECT GuardianID FROM `Guardian`";
         $result = $conn->query($sql);
         while($row = $result->fetch_assoc()) {
-          echo "<option value='GuardianID'>".$row['GuardianID']."</option>";
+          echo "<option value='".$row['GuardianID']."'>".$row['GuardianID']."</option>";
         }
         ?>
       </select>
@@ -350,7 +350,7 @@
       $sql = "SELECT PaymentID FROM `Payment`";
       $result = $conn->query($sql);
       while($row = $result->fetch_assoc()) {
-        echo "<option value='PaymentID'>".$row['PaymentID']."</option>";
+        echo "<option value='".$row['PaymentID']."'>".$row['PaymentID']."</option>";
       }
       ?>
     </select>

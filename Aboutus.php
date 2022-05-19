@@ -1,0 +1,756 @@
+<?php include 'connection.php'; 
+session_start();
+$_SESSION["page"] = "Aboutus.php";?>
+<!DOCTYPE html>
+<html>
+<head>
+      <title>About us</title>
+      <meta content="width=device-width" name="viewport">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style type="text/css">
+
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Biko, sans-serif;
+        }
+        .wrapper {
+          width: 100%;
+          height: 100vh;
+          overflow-y: scroll;
+          scroll-snap-type: y mandatory;
+        }
+        .content{
+          max-width: 800px;
+        }
+        section {
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          scroll-snap-align: start;
+        }
+
+        .one{
+          background: url('img3.jpg');
+          position: relative;
+          display: flex;
+          flex-flow: column wrap;
+          overflow: hidden;
+        }
+        .one .heading {
+          position: relative;
+          top: 0;
+          height: 30vh;
+          width: 100%;
+          background: url('img3.jpg');
+          background-size: cover;
+          overflow: hidden;
+        }
+        .one .subheading {
+          position: relative;
+          top: 0;
+          height: 70vh;
+          width: 100%;
+          background-color: #7CCBDC;
+          overflow: hidden;
+          text-align: center;
+        }
+        .one #orange h1{
+          color: #7CCBDC;
+          font-size: 90px;
+          position: relative;
+          bottom: 52.5vh;
+          padding-top: 67vh;
+          left: 5vw;
+        }
+        .one #white p{
+          color: black;
+          color: white;
+          font-size: inherit;
+          position: absolute;
+          width: 45vw;
+          font-size: 20px;
+          left: 4vw;
+          text-align: justify;
+          padding-top: 2vh;
+          line-height: auto;
+        }
+
+        .map2 {
+          right: 3vw;
+          top: 35vh;
+          position: absolute;
+          border-radius: 5px;
+          overflow: hidden;
+          height: 60%;
+          width: 40%;
+          border: 4px white solid;
+          text-align: center;
+          /*padding: 20% 0;*/
+          display: block;
+          margin-right: 3vw;
+          margin-left: 50vw;
+          box-shadow: 2px 2px 30px rgba(0,0,0,0.4);
+        }
+        .map2 iframe{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 1000px;
+          height: 1000px;
+          text-align:center;
+          display: block;
+        }
+        .one button{
+          width:141.05px;
+          margin:0 auto;
+          text-align:center;
+          top: 80%;
+          /*left: 19.5%;*/
+          position: absolute;
+          display: inline-block;
+          outline: none;
+          cursor: pointer;
+          font-size: 18px;
+          line-height: 20px;
+          font-weight: 600;
+          border-radius: 8px;
+          padding: 14px 24px;
+          border: none;
+          transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+          background: #7CCBDC;
+          filter: brightness(95%);
+          color: #fff;
+          z-index: 1;
+        }
+        .one button:hover{
+          filter: brightness(110%);
+        }
+        @media (min-width:601px) {
+          .one button{
+            left: 26%;
+            transform: translateX(-50%);
+          }
+        }
+        @media(max-width:600px){
+          .one button{
+            top: 51.5%;
+            width:141.05px;
+            margin:0 auto;
+            text-align:center;
+          }
+              .map2 {
+                top: 60vh;
+                left: 5vw;
+                margin: auto;
+                text-align: center;
+                width: 88vw;
+                height: 34.5vh;
+                overflow: hidden;
+                }
+                .one .span1{
+                  visibility: hidden;
+                }
+                .one .SE{
+                  visibility: hidden;
+                }
+              .one #white p{
+                width: 89vw;
+                font-size: 20px;
+                left: 5vw;
+                margin: auto;
+              }
+              .one #orange h1{
+                text-align: center;
+                bottom: 52.5vh;
+                font-size: 48px;
+                left: 0vw;
+              }
+              .span1{
+                visibility: visible;
+              }
+
+              .heading{
+                height: 30vh;
+              }
+              .subheading{
+                height: 70vh;
+              }
+            }
+            @media (max-width:469px){
+              .span1 {
+                visibility:hidden;
+              }
+              .one .s8{
+                visibility: hidden;
+              }
+            }
+            @media(max-height:800px)
+            {
+              .span3 {
+                visibility:hidden;
+              }
+              .s8{
+                visibility: hidden;
+              }
+            }
+            @media(max-height:740px)
+            {
+              .SE{
+                visibility: hidden;
+              }
+              .span1 {
+                visibility:hidden;
+              }
+              .span2 {
+                visibility:hidden;
+              }
+              .span3 {
+                visibility:hidden;
+              }
+            }
+
+            @media (max-width:1180px){
+              .four {
+                visibility:hidden;
+              }
+            }
+            @media (max-width:737px){
+              .span3 {
+                visibility:hidden;
+              }
+            }
+            @media (max-width:667px){
+              .span2 {
+                visibility:hidden;
+              }
+            }
+        h1 {
+          font-size: 8vw;
+          line-height: 150px;
+          color: #b7923a;
+          margin:  0;
+        }
+        h2 {
+          font-size
+        }
+        .subheading {
+          color: #b7923a;
+          font-size: 24px;
+        }
+        .two {
+          background-color: white;
+          position: relative;
+          display: flex;
+          flex-flow: column wrap;
+          overflow: hidden;
+        }
+        .two .imgrow{
+          width: 900px;
+          height: 45vh;
+          position: relative;
+          margin-bottom: auto;
+          margin-top: 3vh;
+          background-color: black;
+          margin-left: 0%;
+          margin-right: 0%;
+          background: url('img4.jpg');
+          background-size: cover;
+        }
+        .two .imgrow h1{
+          width: 450px;
+          height: 100px;
+          font-size: 50px;
+          padding-top: 10vh;
+          position: relative;
+          margin-left: 2.5%;
+          margin-right: auto;
+          color: white;
+        }
+        .two .imgrow p{
+          width: 450px;
+          height: 100px;
+          font-size: 20px;
+          padding-top: 0vh;
+          color: white;
+          position: relative;
+          margin-left: 2.5%;
+          margin-right: auto;
+        }
+        .two .imgrow2{
+          width: 900px;
+          height: 45vh;
+          position: relative;
+          margin: auto;
+          top: -1vh;
+          background-color: blue;
+          margin-left: 0%;
+          margin-right: 0%;
+          background: url('img1.jpg');
+          background-size: cover;
+        }
+        .two .imgrow2 h1{
+          width: 450px;
+          height: 100px;
+          font-size: 50px;
+          padding-top: 10vh;
+          position: relative;
+          margin-left: auto;
+          margin-right: 2.5%;
+          color: white;
+          text-align: right;
+        }
+        .two .imgrow2 p{
+          width: 450px;
+          height: 100px;
+          font-size: 20px;
+          padding-top: 0vh;
+          color: white;
+          position: relative;
+          margin-left: auto;
+          margin-right: 2.5%;
+          text-align: right;
+        }
+        @media (min-width: 1600px){
+          .two .imgrow{
+            position: absolute;
+            right: 5vw;
+            top: 0;
+          }
+          .two .imgrow2{
+            position: absolute;
+            top: 51.7%;
+            left: 5vw;
+          }
+          .two .imgrow2 p{
+            left: 35vw;
+            color: black;
+            text-align: center;
+          }
+          .two .imgrow2 h1{
+            left: 35vw;
+            color: black;
+            text-align: center;
+          }
+          .two .imgrow p{
+            right: 35vw;
+            color: black;
+            text-align: center;
+          }
+          .two .imgrow h1{
+            right: 35vw;
+            color: black;
+            text-align: center;
+          }
+        }
+        @media (max-width:900px)
+        {
+          .two .imgrow2{
+            position: absolute;
+            right: -1.8%;
+            top: 51.7%;
+          }
+        }
+        @media (max-width:490px){
+          .two .imgrow{
+            position: absolute;
+            left: -1.8%;
+            top: 0%;
+          }
+          .two .imgrow p{
+            position: absolute;
+            width: 95vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            left: 1.5vw;
+            top: 50%;
+            text-align: center;
+          }
+          .two .imgrow h1{
+            position: absolute;
+            width: 95vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            left: 1.5vw;
+            text-align: center;
+          }
+          .two .imgrow2 p{
+            position: absolute;
+            width: 95vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            right: 1.5vw;
+            top: 50%;
+            text-align: center;
+          }
+          .two .imgrow2 h1{
+            position: absolute;
+            width: 95vw;
+            margin-left: 2.5vw;
+            margin-right: 2.5vw;
+            right: 1.5vw;
+            text-align: center;
+          }
+        }
+        .three {
+          background-color: black;
+          height: 10vh;
+          flex-direction: column;
+          flex:1;
+        }
+        .three .footer {
+          padding: 5vh;
+          background-color: #fff;
+          box-sizing: border-box;
+          height: 20vh;
+          margin: 0;
+          margin-top: auto;
+          display: inline-block;
+        }
+        .footer .social{
+          text-align: center;
+          padding-bottom: 25px;
+          color: #4b4c4d;
+        }
+        .footer .social a {
+          font-size: 24px;
+          color: inherit;
+          border: 1px solid #ccc;
+          height: 40px;
+          width: 40px;
+          line-height: 38px;
+          display: inline-block;
+          text-align: center;
+          border-radius: 50%;
+          margin: 0 8px;
+          opacity: 0.75;
+          text-decoration: none;
+        }
+        .footer .social a:hover{
+          opacity: 0.9;
+        }
+        .footer ul {
+          margin-top: 0;
+          padding: 0;
+          list-style: none;
+          font-size: 18px;
+          line-height: 1.6;
+          margin-bottom: 0;
+          text-align: center;
+        }
+        .footer ul a {
+          color: inherit;
+          text-decoration: none;
+          opacity: 0.8;
+        }
+        .footer ul li {
+          display: inline-block;
+          padding: 0 15px;
+        }
+        .footer ul li a:hover{
+          opacity: 1;
+        }
+        .footer .copyright {
+          margin-top: 15px;
+          text-align: center;
+          font-size: 13px;
+          color: #aaa;
+        }
+        #menu__toggle {
+            opacity: 0;
+            }
+        #menu__toggle:checked + .menu__btn > span {
+            transform: rotate(45deg);
+            }
+        #menu__toggle:checked + .menu__btn > span::before {
+            top: 0;
+            transform: rotate(0deg);
+            }
+        #menu__toggle:checked + .menu__btn > span::after {
+            top: 0;
+            transform: rotate(90deg);
+            }
+        #menu__toggle:checked ~ .menu__box {
+            left: 0 !important;
+            }
+        .menu__btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            z-index: 3;
+            margin: 0;
+            }
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #616161;
+            transition-duration: .25s;
+            }
+      .menu__btn > span::before {
+            content: '';
+            top: -8px;
+            }
+      .menu__btn > span::after {
+            content: '';
+            top: 8px;
+            }
+      .menu__box {
+            display: block;
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: -100%;
+            width: 300px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            background-color: #ECEFF1;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+            transition-duration: .25s;
+            }
+      .menu__item {
+            display: block;
+            padding: 12px 24px;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition-duration: .25s;
+            }
+      .menu__item:hover {
+            background-color: #CFD8DC;
+            }
+
+            .center {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+            .popup-overlay {
+              position: fixed;
+              top: 0px;
+              left: 0px;
+              width: 100%;
+              height: 100vh;
+              z-index: 1;
+              background: rgba(0,0,0,0.5);
+              display: none;
+            }
+            .popup {
+              position: absolute;
+              top: -150%;
+              left: 50%;
+              transform: translate(-50%, -50%) scale(1.15);
+              width: 300px;
+              height: 500px;
+              background: #f5f5f5;
+              z-index: 2;
+              opacity: 0;
+              border-radius: 5px;
+              box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+              transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+            }
+            body.showLoginForm .popup-overlay {
+              display: block;
+            }
+            body.showLoginForm .popup {
+              top: 50%;
+              opacity: 1;
+              transform: translate(-50%, -50%) scale(1);
+            }
+            .popup .popup-close{
+              position: absolute;
+              top: -10px;
+              right: -10px;
+              width: 40px;
+              height: 40px;
+              background: #555;
+              color: #f5f5f5;
+              font-size: 25px;
+              font-weight: 600;
+              text-align:center;
+              border-radius: 50%;
+              cursor: pointer;
+            }
+            .popup .form .avatar{
+              margin: 30px 0px 20px;
+              text-align: center;
+            }
+            .popup .form .avatar img {
+              width: 130px;
+              border-radius: 50%;
+            }
+            .popup .form .header {
+              text-align: center;
+              font-size: 20px;
+              font-weight: 600;
+              color:#222;
+              margin-bottom:5px;
+            }
+            .popup .form .element{
+              padding: 8px 20px;
+            }
+            .popup .form .element label{
+              display: block;
+              font-size: 14px;
+              color: #222;
+              margin-bottom:5px;
+            }
+            .popup .form .element input{
+              width: 100%;
+              padding: 8px 10px;
+              box-sizing: border-box;
+              outline: none;
+              border: 1px solid #aaa;
+              background: #eee;
+              border-radius: 5px;
+            }
+            .popup .form .element button {
+              margin-top: 5px;
+              width: 100%;
+              padding: 10px 0px;
+              text-transform: uppercase;
+              outline: none;
+              border: none;
+              font-size: 15px;
+              font-weight: 600;
+              border-radius: 5px;
+              cursor: pointer;
+              background: #4889da;
+              color: #f5f5f5;
+            }
+            .error {
+              background: #F2DEDE;
+              color: #A94442;
+              padding: 10px;
+              margin-left: 5px;
+              width: 90%;
+              border-radius: 5px;
+              text-align: center;
+            }
+
+      </style>
+</head>
+
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    if (window.location.href.indexOf("error") > -1) {
+      openLoginForm();
+    }
+  });
+</script>
+  <img alt="Children colouring and drawing" style="display:none;">
+  <div class="wrapper">
+    <div class="hamburger-menu">
+      <input id="menu__toggle" type="checkbox" />
+          <label class="menu__btn" for="menu__toggle">
+            <span></span>
+          </label>
+          <ul class="menu__box">
+            <li><a class="menu__item" href="HomePage.php">Home</a></li>
+            <li><a class="menu__item" href="Aboutus.php">About us</a></li>
+            <li><a class="menu__item" href="Ourservices.php">Our services</a></li>
+            <li><a class="menu__item" href="Contactus.php">Contact us</a></li>
+            <li><a class="menu__item" href="Applications.php">Applications</a></li>
+            <li><a class="menu__item" href ="#" onclick="openLoginForm()">Login</a></li>
+          </ul>
+    </div>
+    <div class="popup-overlay"></div>
+    <div class="popup">
+      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+      <div class="form">
+          <div class="avatar">
+            <img src="https://bit.ly/31pHqJb" alt="Little floating cloud">
+          </div>
+          <form id="loginform" action="login.php" method="POST">
+            <?php
+            if (isset($_GET['error'])) { ?>
+              <p class="error"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+          <div class="header">Member login</div>
+          <div class="element">
+            <label for="username">Username</label>
+            <input type="text" id="username" required name="username">
+          </div>
+          <div class="element">
+            <label for="password">Password</label>
+            <input type="text" id="password" required name="password">
+          </div>
+          <div class="element">
+            <button type="submit" name="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="LoginScript.js">
+    </script>
+    <section class="one">
+      <div class="heading" id="orange">
+        <h1>About us:</h1>
+      </div>
+      <div class="subheading" id="white">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. <span class="s8">Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi.</span><span class="SE">Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span><span class="span1"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span><span class="span2"><br></br>Nulla facilisi. Donec mattis, turpis sit amet commodo cursus, arcu nibh finibus sapien, id hendrerit elit quam id libero.</span> <span class="span3"><br></br> Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices.</span><span class="four"><br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in leo bibendum, egestas enim non, gravida eros. <span class="s8">Aenean euismod odio et urna pharetra, a feugiat nisl iaculis. Praesent tellus sapien, consequat eu nibh a, facilisis blandit eros. Nullam cursus nec tortor fringilla ultrices. Nulla facilisi.</span></p></div>
+      <div class="map2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9360.667303431694!2d151.01754078541313!3d-33.95409744505719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bee80170a93d%3A0x508110eec7ed59aa!2s41%20McGirr%20St%2C%20Padstow%20NSW%202211!5e0!3m2!1sen!2sau!4v1650953092196!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" alt="Map showing location"></iframe>
+      </div>
+    </section>
+    <section class="two">
+      <div class="imgrow">
+        <img alt="Child outdoors playing with plants" style="display:none;">
+        <h1>Our Vision</h1>
+        <p>A community centred on children / young people, families and employees who collaborate to deliver high quality early education and care programs that enable everyone to thrive.</p>
+      </div>
+      <div class="imgrow2">
+        <img alt="Children holding watering can" style="display:none;">
+        <h1>Our Mission</h1>
+        <p>To be a responsive, innovative and leading provider of quality early education and care, creating passion for learning, engagement and fun in our community.</p>
+      </div>
+    </section>
+    <section class="three">
+        <section class="footer">
+          <div class="social">
+            <a href="#"<i class ="fab fa-facebook-f"></i></a>
+            <a href="#"<i class ="fab fa-snapchat"></i></a>
+            <a href="#"<i class ="fab fa-instagram"></i></a>
+            <a href="#"<i class ="fab fa-twitter"></i></a>
+          </div>
+          <ul class="list">
+            <li>
+              <a href="HomePage.html">Home</a>
+            </li>
+            <li>
+              <a href="Aboutus.html">About</a>
+            </li>
+            <li>
+              <a href="Ourservices.html">Services</a>
+            </li>
+            <li>
+              <a href="Contactus.html">Contact</a>
+            </li>
+            <li>
+              <a href="Applications.html">Applications</a>
+            </li>
+          </ul>
+          <p class="copyright">
+            Nicholas Payk @ 2022
+          </p>
+        </section>
+    </section>
+  </div>
+</body>
+</html>

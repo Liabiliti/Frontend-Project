@@ -1,6 +1,9 @@
 <?php
+session_start();
   include 'connection.php';
-
+  if(isset($_SESSION["page"])){
+  $page = $_SESSION["page"];
+  
   /*if (isset($_POST['submit'])){*/
   header("Access-Control-Expose-Headers: Location");
     $username = $_POST['username'];
@@ -12,12 +15,13 @@
         header("location:Allergy.php");
       }
       else {
-        header("location:Contactus.php?error=Invalid password!");
+        header("location:$page?error=Invalid password!");
 
       }
     }
     else {
-      header("location:Contactus.php?error=Invalid username or password");
+      header("location:$page?error=Invalid username or password");
   }
+}
 
 ?>

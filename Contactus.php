@@ -1,4 +1,6 @@
-<?php include 'connection.php'; ?>
+<?php include 'connection.php'; 
+session_start();
+$_SESSION["page"] = "Contactus.php";?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -449,7 +451,15 @@
 </head>
 
 <body>
-  <img alt="Interior of Padstow Child Care Centre">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    if (window.location.href.indexOf("error") > -1) {
+      openLoginForm();
+    }
+  });
+</script>
+  <img alt="Interior of Padstow Child Care Centre" style="display:none;">
   <div class="wrapper">
     <div class="hamburger-menu">
       <input id="menu__toggle" type="checkbox" />
@@ -457,14 +467,15 @@
             <span></span>
           </label>
           <ul class="menu__box">
-            <li><a class="menu__item" href="HomePage.html">Home</a></li>
-            <li><a class="menu__item" href="Aboutus.html">About us</a></li>
-            <li><a class="menu__item" href="Ourservices.html">Our services</a></li>
+            <li><a class="menu__item" href="HomePage.php">Home</a></li>
+            <li><a class="menu__item" href="Aboutus.php">About us</a></li>
+            <li><a class="menu__item" href="Ourservices.php">Our services</a></li>
             <li><a class="menu__item" href="Contactus.php">Contact us</a></li>
-            <li><a class="menu__item" href="Applications.html">Applications</a></li>
+            <li><a class="menu__item" href="Applications.php">Applications</a></li>
             <li><a class="menu__item" href ="#" onclick="openLoginForm()">Login</a></li>
           </ul>
     </div>
+    
     <div class="popup-overlay"></div>
     <div class="popup">
       <div class="popup-close" onclick="closeLoginForm()">&times;</div>
